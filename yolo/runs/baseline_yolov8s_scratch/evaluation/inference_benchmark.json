@@ -1,0 +1,30 @@
+{
+  "hardware_environment": {
+    "device": "cuda:0",
+    "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "cuda_available": true,
+    "torch_version": "2.14.1+cu130",
+    "precision_mode": "FP16 Autocast"
+  },
+  "single_image_benchmark": {
+    "batch_size": 1,
+    "input_resolution": "512x512x3",
+    "mean_latency_ms": 11.33,
+    "median_latency_ms": 11.33,
+    "std_latency_ms": 0.54,
+    "min_latency_ms": 10.45,
+    "max_latency_ms": 12.82,
+    "throughput_fps": 88.23,
+    "timed_iterations": 100,
+    "warmup_iterations": 20,
+    "timing_scope": "PyTorch forward inference pass with CUDA synchronization (excludes disk I/O)"
+  },
+  "batched_benchmark": {
+    "batch_size": 4,
+    "input_resolution": "4x3x512x512",
+    "mean_batch_latency_ms": 11.54,
+    "throughput_images_per_sec": 346.7,
+    "timed_iterations": 50,
+    "warmup_iterations": 10
+  }
+}

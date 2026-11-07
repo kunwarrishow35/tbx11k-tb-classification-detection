@@ -1,0 +1,184 @@
+{
+  "split_policy": "deterministic_sorted_integer_allocation",
+  "seed": "None (pure deterministic sorted positional slicing)",
+  "source_dataset": "TBX11K",
+  "inclusion_rules": {
+    "health": "all 3,800 physical images in imgs/health/",
+    "tb": "799 eligible images in imgs/tb/ with valid bounding-box XMLs"
+  },
+  "exclusions": {
+    "tb1199.png": "XML annotation contains 0 objects; preserved untouched in imgs/tb/ and annotations/xml/",
+    "sick": "Excluded cohort from this experiment",
+    "extra": "Excluded cohort from this experiment",
+    "official_test_set": "Preserved untouched in TBX11K/test/"
+  },
+  "classification_targets": [
+    "ActiveTuberculosis",
+    "ObsoletePulmonaryTuberculosis"
+  ],
+  "multi_label_encoding": {
+    "healthy": {
+      "ActiveTuberculosis": 0,
+      "ObsoletePulmonaryTuberculosis": 0
+    },
+    "active_only": {
+      "ActiveTuberculosis": 1,
+      "ObsoletePulmonaryTuberculosis": 0
+    },
+    "obsolete_only": {
+      "ActiveTuberculosis": 0,
+      "ObsoletePulmonaryTuberculosis": 1
+    },
+    "mixed": {
+      "ActiveTuberculosis": 1,
+      "ObsoletePulmonaryTuberculosis": 1
+    }
+  },
+  "split_ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "counts": {
+    "train": {
+      "healthy_count": 2660,
+      "tb_count": 559,
+      "total_count": 3219,
+      "healthy_first": "h0001.png",
+      "healthy_last": "h3523.png",
+      "tb_first": "tb0003.png",
+      "tb_last": "tb0839.png",
+      "active_only_images": 431,
+      "obsolete_only_images": 105,
+      "mixed_images": 23,
+      "mixed_image_list": [
+        "tb0135.png",
+        "tb0142.png",
+        "tb0154.png",
+        "tb0167.png",
+        "tb0190.png",
+        "tb0246.png",
+        "tb0255.png",
+        "tb0279.png",
+        "tb0284.png",
+        "tb0350.png",
+        "tb0378.png",
+        "tb0392.png",
+        "tb0395.png",
+        "tb0501.png",
+        "tb0506.png",
+        "tb0526.png",
+        "tb0543.png",
+        "tb0639.png",
+        "tb0640.png",
+        "tb0667.png",
+        "tb0676.png",
+        "tb0713.png",
+        "tb0786.png"
+      ],
+      "active_boxes": 657,
+      "obsolete_boxes": 180,
+      "total_boxes": 837,
+      "active_positives": 454,
+      "obsolete_positives": 128
+    },
+    "val": {
+      "healthy_count": 570,
+      "tb_count": 120,
+      "total_count": 690,
+      "healthy_first": "h3525.png",
+      "healthy_last": "h4266.png",
+      "tb_first": "tb0841.png",
+      "tb_last": "tb1018.png",
+      "active_only_images": 103,
+      "obsolete_only_images": 12,
+      "mixed_images": 5,
+      "mixed_image_list": [
+        "tb0870.png",
+        "tb0875.png",
+        "tb0945.png",
+        "tb0949.png",
+        "tb0968.png"
+      ],
+      "active_boxes": 172,
+      "obsolete_boxes": 23,
+      "total_boxes": 195,
+      "active_positives": 108,
+      "obsolete_positives": 17
+    },
+    "test": {
+      "healthy_count": 570,
+      "tb_count": 120,
+      "total_count": 690,
+      "healthy_first": "h4267.png",
+      "healthy_last": "h5000.png",
+      "tb_first": "tb1019.png",
+      "tb_last": "tb1197.png",
+      "active_only_images": 96,
+      "obsolete_only_images": 22,
+      "mixed_images": 2,
+      "mixed_image_list": [
+        "tb1104.png",
+        "tb1143.png"
+      ],
+      "active_boxes": 143,
+      "obsolete_boxes": 36,
+      "total_boxes": 179,
+      "active_positives": 98,
+      "obsolete_positives": 24
+    },
+    "total": {
+      "healthy_count": 3800,
+      "tb_count": 799,
+      "total_count": 4599,
+      "active_only_images": 630,
+      "obsolete_only_images": 139,
+      "mixed_images": 30,
+      "active_boxes": 972,
+      "obsolete_boxes": 239,
+      "total_boxes": 1211
+    }
+  },
+  "index_boundaries": {
+    "health": {
+      "train": {
+        "start_idx": 0,
+        "end_idx": 2660,
+        "first": "h0001.png",
+        "last": "h3523.png"
+      },
+      "val": {
+        "start_idx": 2660,
+        "end_idx": 3230,
+        "first": "h3525.png",
+        "last": "h4266.png"
+      },
+      "test": {
+        "start_idx": 3230,
+        "end_idx": 3800,
+        "first": "h4267.png",
+        "last": "h5000.png"
+      }
+    },
+    "tb": {
+      "train": {
+        "start_idx": 0,
+        "end_idx": 559,
+        "first": "tb0003.png",
+        "last": "tb0839.png"
+      },
+      "val": {
+        "start_idx": 559,
+        "end_idx": 679,
+        "first": "tb0841.png",
+        "last": "tb1018.png"
+      },
+      "test": {
+        "start_idx": 679,
+        "end_idx": 799,
+        "first": "tb1019.png",
+        "last": "tb1197.png"
+      }
+    }
+  }
+}

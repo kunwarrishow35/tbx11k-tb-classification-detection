@@ -1,0 +1,558 @@
+table_id,table_title,row,column,value_full_precision,value_display
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Architecture,DenseNet-121 (Torchvision variant),DenseNet-121 (Torchvision variant)
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Weights,From scratch (pretrained=False),From scratch (pretrained=False)
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Input Size,"512 x 512, 3 channels (RGB)","512 x 512, 3 channels (RGB)"
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Optimizer / LR,"SGD (lr=0.01, momentum=0.9, weight_decay=0.0001, nesterov=True)","SGD (lr=0.01, momentum=0.9, weight_decay=0.0001, nesterov=True)"
+Table 1,Model Configuration and Training Specifications,DenseNet-121,LR Schedule,"StepLR (step_size=30, gamma=0.1)","StepLR (step_size=30, gamma=0.1)"
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Batch,4,4
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Epochs,70,70
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Augmentation,None,None
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Normalization,"ImageNet (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])","ImageNet (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Loss,BCEWithLogitsLoss(),BCEWithLogitsLoss()
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Checkpoint Selection,Best validation macro-F1 at threshold 0.5,Best validation macro-F1 at threshold 0.5
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Threshold Protocol,"Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking","Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking"
+Table 1,Model Configuration and Training Specifications,DenseNet-121,Recipe,Project protocol (not the official DenseNet recipe),Project protocol (not the official DenseNet recipe)
+Table 1,Model Configuration and Training Specifications,ResNet-101,Architecture,ResNet-101 (Torchvision ResNet V1.5 variant),ResNet-101 (Torchvision ResNet V1.5 variant)
+Table 1,Model Configuration and Training Specifications,ResNet-101,Weights,From scratch (pretrained=False),From scratch (pretrained=False)
+Table 1,Model Configuration and Training Specifications,ResNet-101,Input Size,"512 x 512, 3 channels (RGB)","512 x 512, 3 channels (RGB)"
+Table 1,Model Configuration and Training Specifications,ResNet-101,Optimizer / LR,"SGD (lr=0.01, momentum=0.9, weight_decay=0.0001, nesterov=False)","SGD (lr=0.01, momentum=0.9, weight_decay=0.0001, nesterov=False)"
+Table 1,Model Configuration and Training Specifications,ResNet-101,LR Schedule,"StepLR (step_size=30, gamma=0.1)","StepLR (step_size=30, gamma=0.1)"
+Table 1,Model Configuration and Training Specifications,ResNet-101,Batch,4,4
+Table 1,Model Configuration and Training Specifications,ResNet-101,Epochs,"70 configured; stopped at epoch 60 (early stopping, patience 20); best epoch 40","70 configured; stopped at epoch 60 (early stopping, patience 20); best epoch 40"
+Table 1,Model Configuration and Training Specifications,ResNet-101,Augmentation,None,None
+Table 1,Model Configuration and Training Specifications,ResNet-101,Normalization,"None (scaled to [0.0, 1.0] via ToTensor())","None (scaled to [0.0, 1.0] via ToTensor())"
+Table 1,Model Configuration and Training Specifications,ResNet-101,Loss,BCEWithLogitsLoss(),BCEWithLogitsLoss()
+Table 1,Model Configuration and Training Specifications,ResNet-101,Checkpoint Selection,Best validation macro-F1 at threshold 0.5,Best validation macro-F1 at threshold 0.5
+Table 1,Model Configuration and Training Specifications,ResNet-101,Threshold Protocol,"Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking","Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking"
+Table 1,Model Configuration and Training Specifications,ResNet-101,Recipe,Project protocol (not the official ResNet recipe),Project protocol (not the official ResNet recipe)
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Architecture,EfficientNet-B0 (Torchvision variant),EfficientNet-B0 (Torchvision variant)
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Weights,From scratch (pretrained=False),From scratch (pretrained=False)
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Input Size,"512 x 512, 3 channels (RGB)","512 x 512, 3 channels (RGB)"
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Optimizer / LR,"timm.optim.RMSpropTF (lr=0.00025, alpha=0.9, momentum=0.9, eps=0.001, weight_decay=1e-5)","timm.optim.RMSpropTF (lr=0.00025, alpha=0.9, momentum=0.9, eps=0.001, weight_decay=1e-5)"
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,LR Schedule,"Staircase exponential decay (warmup 5 ep, decay every 2.4 ep at 0.97)","Staircase exponential decay (warmup 5 ep, decay every 2.4 ep at 0.97)"
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Batch,4,4
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Epochs,70,70
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Augmentation,"Inception crop (area 0.08-1.0), Bicubic resize(512,512), RandomHorizontalFlip(0.5)","Inception crop (area 0.08-1.0), Bicubic resize(512,512), RandomHorizontalFlip(0.5)"
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Normalization,"ImageNet (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])","ImageNet (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Loss,BCEWithLogitsLoss(),BCEWithLogitsLoss()
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Checkpoint Selection,Best validation macro-F1 (EMA weights) at threshold 0.5,Best validation macro-F1 (EMA weights) at threshold 0.5
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Threshold Protocol,"Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking","Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking"
+Table 1,Model Configuration and Training Specifications,EfficientNet-B0,Recipe,Official EfficientNet recipe with dataset- and hardware-related changes,Official EfficientNet recipe with dataset- and hardware-related changes
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Architecture,YOLOv8s (Ultralytics variant),YOLOv8s (Ultralytics variant)
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Weights,From scratch (pretrained=False),From scratch (pretrained=False)
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Input Size,"512 x 512, 3 channels (RGB)","512 x 512, 3 channels (RGB)"
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Optimizer / LR,"auto (SGD / lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005)","auto (SGD / lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005)"
+Table 1,Model Configuration and Training Specifications,YOLOv8s,LR Schedule,"Linear decay (lr0 to lr0*lrf, warmup 3 ep)","Linear decay (lr0 to lr0*lrf, warmup 3 ep)"
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Batch,4,4
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Epochs,70,70
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Augmentation,"mosaic=1.0, erasing=0.4, fliplr=0.5, translate=0.1, scale=0.5, hsv (auto_augment=randaugment)","mosaic=1.0, erasing=0.4, fliplr=0.5, translate=0.1, scale=0.5, hsv (auto_augment=randaugment)"
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Normalization,"None (scaled to [0.0, 1.0])","None (scaled to [0.0, 1.0])"
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Loss,"YOLOv8 detection loss (box=7.5, cls=0.5, dfl=1.5)","YOLOv8 detection loss (box=7.5, cls=0.5, dfl=1.5)"
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Checkpoint Selection,Best validation detection fitness (mAP50 * 0.1 + mAP50-95 * 0.9),Best validation detection fitness (mAP50 * 0.1 + mAP50-95 * 0.9)
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Threshold Protocol,"Validation F1 sweep on bounding boxes (0.01 to 0.95 in 0.01 steps), IoU threshold 0.5","Validation F1 sweep on bounding boxes (0.01 to 0.95 in 0.01 steps), IoU threshold 0.5"
+Table 1,Model Configuration and Training Specifications,YOLOv8s,Recipe,"Ultralytics default recipe, trained from scratch","Ultralytics default recipe, trained from scratch"
+Table 2,Precision at the shared validation-tuned threshold (higher is better),DenseNet-121,Active TB,0.8041237113402062,0.804
+Table 2,Precision at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete TB,0.14285714285714285,0.143
+Table 2,Precision at the shared validation-tuned threshold (higher is better),DenseNet-121,Avg (2 labels),0.4734904270986745,0.473
+Table 2,Precision at the shared validation-tuned threshold (higher is better),DenseNet-121,Healthy,0.9860869565217392,0.986
+Table 2,Precision at the shared validation-tuned threshold (higher is better),DenseNet-121,Active-only,0.7816091954022989,0.782
+Table 2,Precision at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete-only,0.1111111111111111,0.111
+Table 2,Precision at the shared validation-tuned threshold (higher is better),DenseNet-121,Both†,0.0,0.000
+Table 2,Precision at the shared validation-tuned threshold (higher is better),ResNet-101,Active TB,0.7538461538461538,0.754
+Table 2,Precision at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete TB,0.18556701030927836,0.186
+Table 2,Precision at the shared validation-tuned threshold (higher is better),ResNet-101,Avg (2 labels),0.4697065820777161,0.470
+Table 2,Precision at the shared validation-tuned threshold (higher is better),ResNet-101,Healthy,0.996415770609319,0.996
+Table 2,Precision at the shared validation-tuned threshold (higher is better),ResNet-101,Active-only,0.6285714285714286,0.629
+Table 2,Precision at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete-only,0.0,0.000
+Table 2,Precision at the shared validation-tuned threshold (higher is better),ResNet-101,Both†,0.021052631578947368,0.021
+Table 2,Precision at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active TB,0.765625,0.766
+Table 2,Precision at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete TB,0.1794871794871795,0.179
+Table 2,Precision at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Avg (2 labels),0.47255608974358976,0.473
+Table 2,Precision at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Healthy,0.998220640569395,0.998
+Table 2,Precision at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active-only,0.09090909090909091,0.091
+Table 2,Precision at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete-only,0.0,0.000
+Table 2,Precision at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Both†,0.017094017094017096,0.017
+Table 2,Precision at the shared validation-tuned threshold (higher is better),YOLOv8s,Active TB,0.8085106382978723,0.809
+Table 2,Precision at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete TB,0.0,0.000
+Table 2,Precision at the shared validation-tuned threshold (higher is better),YOLOv8s,Avg (2 labels),0.40425531914893614,0.404
+Table 2,Precision at the shared validation-tuned threshold (higher is better),YOLOv8s,Healthy,0.9546979865771812,0.955
+Table 2,Precision at the shared validation-tuned threshold (higher is better),YOLOv8s,Active-only,0.7872340425531915,0.787
+Table 2,Precision at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete-only,0.0,0.000
+Table 2,Precision at the shared validation-tuned threshold (higher is better),YOLOv8s,Both†,0.0,0.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),DenseNet-121,Active TB,0.7959183673469388,0.796
+Table 3,Recall at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete TB,0.16666666666666666,0.167
+Table 3,Recall at the shared validation-tuned threshold (higher is better),DenseNet-121,Avg (2 labels),0.4812925170068027,0.481
+Table 3,Recall at the shared validation-tuned threshold (higher is better),DenseNet-121,Healthy,0.9947368421052631,0.995
+Table 3,Recall at the shared validation-tuned threshold (higher is better),DenseNet-121,Active-only,0.7083333333333334,0.708
+Table 3,Recall at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete-only,0.09090909090909091,0.091
+Table 3,Recall at the shared validation-tuned threshold (higher is better),DenseNet-121,Both†,0.0,0.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),ResNet-101,Active TB,1.0,1.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete TB,0.75,0.750
+Table 3,Recall at the shared validation-tuned threshold (higher is better),ResNet-101,Avg (2 labels),0.875,0.875
+Table 3,Recall at the shared validation-tuned threshold (higher is better),ResNet-101,Healthy,0.9754385964912281,0.975
+Table 3,Recall at the shared validation-tuned threshold (higher is better),ResNet-101,Active-only,0.22916666666666666,0.229
+Table 3,Recall at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete-only,0.0,0.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),ResNet-101,Both†,1.0,1.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active TB,1.0,1.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete TB,0.875,0.875
+Table 3,Recall at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Avg (2 labels),0.9375,0.938
+Table 3,Recall at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Healthy,0.9842105263157894,0.984
+Table 3,Recall at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active-only,0.010416666666666666,0.010
+Table 3,Recall at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete-only,0.0,0.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Both†,1.0,1.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),YOLOv8s,Active TB,0.7755102040816326,0.776
+Table 3,Recall at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete TB,0.0,0.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),YOLOv8s,Avg (2 labels),0.3877551020408163,0.388
+Table 3,Recall at the shared validation-tuned threshold (higher is better),YOLOv8s,Healthy,0.9982456140350877,0.998
+Table 3,Recall at the shared validation-tuned threshold (higher is better),YOLOv8s,Active-only,0.7708333333333334,0.771
+Table 3,Recall at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete-only,0.0,0.000
+Table 3,Recall at the shared validation-tuned threshold (higher is better),YOLOv8s,Both†,0.0,0.000
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),DenseNet-121,Active TB,0.9679054054054054,0.968
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete TB,0.963963963963964,0.964
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),DenseNet-121,Avg (2 labels),0.9659346846846847,0.966
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),DenseNet-121,Healthy,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),DenseNet-121,Active-only,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete-only,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),DenseNet-121,Both†,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),ResNet-101,Active TB,0.9459459459459459,0.946
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete TB,0.8813813813813813,0.881
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),ResNet-101,Avg (2 labels),0.9136636636636637,0.914
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),ResNet-101,Healthy,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),ResNet-101,Active-only,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete-only,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),ResNet-101,Both†,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active TB,0.9493243243243243,0.949
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete TB,0.8558558558558559,0.856
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Avg (2 labels),0.9025900900900901,0.903
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Healthy,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active-only,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete-only,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Both†,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),YOLOv8s,Active TB,0.9695945945945946,0.970
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete TB,1.0,1.000
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),YOLOv8s,Avg (2 labels),0.9847972972972974,0.985
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),YOLOv8s,Healthy,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),YOLOv8s,Active-only,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 4,Specificity at the shared validation-tuned threshold (higher is better),YOLOv8s,Both†,—,—
+Table 5,F1 at the shared validation-tuned threshold (higher is better),DenseNet-121,Active TB,0.8,0.800
+Table 5,F1 at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete TB,0.15384615384615383,0.154
+Table 5,F1 at the shared validation-tuned threshold (higher is better),DenseNet-121,Avg (2 labels),0.47692307692307695,0.477
+Table 5,F1 at the shared validation-tuned threshold (higher is better),DenseNet-121,Healthy,0.9903930131004367,0.990
+Table 5,F1 at the shared validation-tuned threshold (higher is better),DenseNet-121,Active-only,0.7431693989071039,0.743
+Table 5,F1 at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete-only,0.1,0.100
+Table 5,F1 at the shared validation-tuned threshold (higher is better),DenseNet-121,Both†,0.0,0.000
+Table 5,F1 at the shared validation-tuned threshold (higher is better),ResNet-101,Active TB,0.8596491228070176,0.860
+Table 5,F1 at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete TB,0.2975206611570248,0.298
+Table 5,F1 at the shared validation-tuned threshold (higher is better),ResNet-101,Avg (2 labels),0.5785848919820211,0.579
+Table 5,F1 at the shared validation-tuned threshold (higher is better),ResNet-101,Healthy,0.9858156028368794,0.986
+Table 5,F1 at the shared validation-tuned threshold (higher is better),ResNet-101,Active-only,0.33587786259541985,0.336
+Table 5,F1 at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete-only,0.0,0.000
+Table 5,F1 at the shared validation-tuned threshold (higher is better),ResNet-101,Both†,0.041237113402061855,0.041
+Table 5,F1 at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active TB,0.8672566371681416,0.867
+Table 5,F1 at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete TB,0.2978723404255319,0.298
+Table 5,F1 at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Avg (2 labels),0.5825644887968368,0.583
+Table 5,F1 at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Healthy,0.991166077738516,0.991
+Table 5,F1 at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active-only,0.018691588785046728,0.019
+Table 5,F1 at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete-only,0.0,0.000
+Table 5,F1 at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Both†,0.03361344537815126,0.034
+Table 5,F1 at the shared validation-tuned threshold (higher is better),YOLOv8s,Active TB,0.7916666666666665,0.792
+Table 5,F1 at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete TB,0.0,0.000
+Table 5,F1 at the shared validation-tuned threshold (higher is better),YOLOv8s,Avg (2 labels),0.39583333333333326,0.396
+Table 5,F1 at the shared validation-tuned threshold (higher is better),YOLOv8s,Healthy,0.9759862778730704,0.976
+Table 5,F1 at the shared validation-tuned threshold (higher is better),YOLOv8s,Active-only,0.7789473684210526,0.779
+Table 5,F1 at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete-only,0.0,0.000
+Table 5,F1 at the shared validation-tuned threshold (higher is better),YOLOv8s,Both†,0.0,0.000
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Active TB,0.9810310948703806,0.981
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete TB,0.9289914914914915,0.929
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Avg (2 labels),0.955011293180936,0.955
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Healthy,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Active-only,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete-only,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Both†,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Active TB,0.9855815637065637,0.986
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete TB,0.8632382382382382,0.863
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Avg (2 labels),0.9244099009724009,0.924
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Healthy,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Active-only,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete-only,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Both†,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active TB,0.9807380722559295,0.981
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete TB,0.922484984984985,0.922
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Avg (2 labels),0.9516115286204572,0.952
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Healthy,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active-only,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete-only,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Both†,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Active TB,0.9719473938223938,0.972
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete TB,0.8146896896896897,0.815
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Avg (2 labels),0.8933185417560418,0.893
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Healthy,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Active-only,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 6,ROC-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Both†,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Active TB,0.855107896024006,0.855
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete TB,0.20774075771242642,0.208
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Avg (2 labels),0.5314243268682163,0.531
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Healthy,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Active-only,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Obsolete-only,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),DenseNet-121,Both†,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Active TB,0.8607905995844829,0.861
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete TB,0.2725106697437753,0.273
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Avg (2 labels),0.5666506346641291,0.567
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Healthy,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Active-only,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Obsolete-only,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),ResNet-101,Both†,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active TB,0.7944126678287635,0.794
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete TB,0.1972382047791733,0.197
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Avg (2 labels),0.4958254363039684,0.496
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Healthy,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Active-only,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Obsolete-only,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Both†,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Active TB,0.8361580397246353,0.836
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete TB,0.2241127925742047,0.224
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Avg (2 labels),0.5301354161494201,0.530
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Healthy,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Active-only,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 7,PR-AUC at the shared validation-tuned threshold (higher is better),YOLOv8s,Both†,—,—
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),DenseNet-121,Active TB,98.0,98
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),DenseNet-121,Obsolete TB,24.0,24
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),DenseNet-121,Avg (2 labels),61.0,61.0
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),DenseNet-121,Healthy,570.0,570
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),DenseNet-121,Active-only,96.0,96
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),DenseNet-121,Obsolete-only,22.0,22
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),DenseNet-121,Both†,2.0,2
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),ResNet-101,Active TB,98.0,98
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),ResNet-101,Obsolete TB,24.0,24
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),ResNet-101,Avg (2 labels),61.0,61.0
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),ResNet-101,Healthy,570.0,570
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),ResNet-101,Active-only,96.0,96
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),ResNet-101,Obsolete-only,22.0,22
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),ResNet-101,Both†,2.0,2
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),EfficientNet-B0,Active TB,98.0,98
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),EfficientNet-B0,Obsolete TB,24.0,24
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),EfficientNet-B0,Avg (2 labels),61.0,61.0
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),EfficientNet-B0,Healthy,570.0,570
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),EfficientNet-B0,Active-only,96.0,96
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),EfficientNet-B0,Obsolete-only,22.0,22
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),EfficientNet-B0,Both†,2.0,2
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),YOLOv8s,Active TB,98.0,98
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),YOLOv8s,Obsolete TB,24.0,24
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),YOLOv8s,Avg (2 labels),61.0,61.0
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),YOLOv8s,Healthy,570.0,570
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),YOLOv8s,Active-only,96.0,96
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),YOLOv8s,Obsolete-only,22.0,22
+Table 8,Evaluation Support at the shared validation-tuned threshold (number of test images),YOLOv8s,Both†,2.0,2
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),DenseNet-121,Exact-match acc.,0.9231884057971015,0.923
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),DenseNet-121,Hamming acc.,0.9398550724637681,0.940
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),DenseNet-121,Macro-F1,0.47692307692307695,0.477
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),DenseNet-121,Weighted-F1,0.6728877679697353,0.673
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),DenseNet-121,Category acc.,0.9231884057971015,0.923
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),ResNet-101,Exact-match acc.,0.8405797101449275,0.841
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),ResNet-101,Hamming acc.,0.9152173913043479,0.915
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),ResNet-101,Macro-F1,0.5785848919820211,0.579
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),ResNet-101,Weighted-F1,0.7490664746135763,0.749
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),ResNet-101,Category acc.,0.8405797101449275,0.841
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Exact-match acc.,0.8173913043478261,0.817
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Hamming acc.,0.9065217391304348,0.907
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Macro-F1,0.5825644887968368,0.583
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Weighted-F1,0.7552466115794314,0.755
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Category acc.,0.8173913043478261,0.817
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),YOLOv8s,Exact-match acc.,0.9318840579710145,0.932
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),YOLOv8s,Hamming acc.,0.9536231884057971,0.954
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),YOLOv8s,Macro-F1,0.39583333333333326,0.396
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),YOLOv8s,Weighted-F1,0.6359289617486337,0.636
+Table 9,Overall classification performance at the shared validation-tuned threshold (higher is better),YOLOv8s,Category acc.,0.9318840579710145,0.932
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),DenseNet-121,Precision,0.9739130434782609,0.974
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),DenseNet-121,Recall,0.9333333333333333,0.933
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),DenseNet-121,F1,0.9531914893617022,0.953
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),ResNet-101,Precision,0.8939393939393939,0.894
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),ResNet-101,Recall,0.9833333333333333,0.983
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),ResNet-101,F1,0.9365079365079364,0.937
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Precision,0.9296875,0.930
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),EfficientNet-B0,Recall,0.9916666666666667,0.992
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),EfficientNet-B0,F1,0.9596774193548387,0.960
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),YOLOv8s,Precision,0.9893617021276596,0.989
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),YOLOv8s,Recall,0.775,0.775
+Table 10,Binary Any TB vs Healthy screening performance at the shared validation-tuned threshold (higher is better),YOLOv8s,F1,0.869158878504673,0.869
+Table 11,Obsolete TB discrimination within TB cases only at the shared validation-tuned threshold (higher is better),DenseNet-121,ROC-AUC,0.5546875,0.555
+Table 11,Obsolete TB discrimination within TB cases only at the shared validation-tuned threshold (higher is better),DenseNet-121,PR-AUC,0.22143857626013477,0.221
+Table 11,Obsolete TB discrimination within TB cases only at the shared validation-tuned threshold (higher is better),ResNet-101,ROC-AUC,0.5694444444444445,0.569
+Table 11,Obsolete TB discrimination within TB cases only at the shared validation-tuned threshold (higher is better),ResNet-101,PR-AUC,0.2910300349519237,0.291
+Table 11,Obsolete TB discrimination within TB cases only at the shared validation-tuned threshold (higher is better),EfficientNet-B0,ROC-AUC,0.47135416666666663,0.471
+Table 11,Obsolete TB discrimination within TB cases only at the shared validation-tuned threshold (higher is better),EfficientNet-B0,PR-AUC,0.1985370557374567,0.199
+Table 11,Obsolete TB discrimination within TB cases only at the shared validation-tuned threshold (higher is better),YOLOv8s,ROC-AUC,0.5872395833333333,0.587
+Table 11,Obsolete TB discrimination within TB cases only at the shared validation-tuned threshold (higher is better),YOLOv8s,PR-AUC,0.27277060694452826,0.273
+Table 12,Precision at fixed threshold 0.5 (higher is better),DenseNet-121,Active TB,0.8222222222222222,0.822
+Table 12,Precision at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete TB,0.23529411764705882,0.235
+Table 12,Precision at fixed threshold 0.5 (higher is better),DenseNet-121,Avg (2 labels),0.5287581699346405,0.529
+Table 12,Precision at fixed threshold 0.5 (higher is better),DenseNet-121,Healthy,0.9709401709401709,0.971
+Table 12,Precision at fixed threshold 0.5 (higher is better),DenseNet-121,Active-only,0.8068181818181818,0.807
+Table 12,Precision at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete-only,0.2,0.200
+Table 12,Precision at fixed threshold 0.5 (higher is better),DenseNet-121,Both†,0.0,0.000
+Table 12,Precision at fixed threshold 0.5 (higher is better),ResNet-101,Active TB,0.81,0.810
+Table 12,Precision at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete TB,0.2692307692307692,0.269
+Table 12,Precision at fixed threshold 0.5 (higher is better),ResNet-101,Avg (2 labels),0.5396153846153846,0.540
+Table 12,Precision at fixed threshold 0.5 (higher is better),ResNet-101,Healthy,0.9826989619377162,0.983
+Table 12,Precision at fixed threshold 0.5 (higher is better),ResNet-101,Active-only,0.8255813953488372,0.826
+Table 12,Precision at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete-only,0.08333333333333333,0.083
+Table 12,Precision at fixed threshold 0.5 (higher is better),ResNet-101,Both†,0.0,0.000
+Table 12,Precision at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active TB,0.8151260504201681,0.815
+Table 12,Precision at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete TB,0.0,0.000
+Table 12,Precision at fixed threshold 0.5 (higher is better),EfficientNet-B0,Avg (2 labels),0.40756302521008403,0.408
+Table 12,Precision at fixed threshold 0.5 (higher is better),EfficientNet-B0,Healthy,0.9947460595446584,0.995
+Table 12,Precision at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active-only,0.7983193277310925,0.798
+Table 12,Precision at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete-only,0.0,0.000
+Table 12,Precision at fixed threshold 0.5 (higher is better),EfficientNet-B0,Both†,0.0,0.000
+Table 12,Precision at fixed threshold 0.5 (higher is better),YOLOv8s,Active TB,—,—
+Table 12,Precision at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete TB,—,—
+Table 12,Precision at fixed threshold 0.5 (higher is better),YOLOv8s,Avg (2 labels),—,—
+Table 12,Precision at fixed threshold 0.5 (higher is better),YOLOv8s,Healthy,—,—
+Table 12,Precision at fixed threshold 0.5 (higher is better),YOLOv8s,Active-only,—,—
+Table 12,Precision at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 12,Precision at fixed threshold 0.5 (higher is better),YOLOv8s,Both†,—,—
+Table 13,Recall at fixed threshold 0.5 (higher is better),DenseNet-121,Active TB,0.7551020408163265,0.755
+Table 13,Recall at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete TB,0.16666666666666666,0.167
+Table 13,Recall at fixed threshold 0.5 (higher is better),DenseNet-121,Avg (2 labels),0.46088435374149656,0.461
+Table 13,Recall at fixed threshold 0.5 (higher is better),DenseNet-121,Healthy,0.9964912280701754,0.996
+Table 13,Recall at fixed threshold 0.5 (higher is better),DenseNet-121,Active-only,0.7395833333333334,0.740
+Table 13,Recall at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete-only,0.13636363636363635,0.136
+Table 13,Recall at fixed threshold 0.5 (higher is better),DenseNet-121,Both†,0.0,0.000
+Table 13,Recall at fixed threshold 0.5 (higher is better),ResNet-101,Active TB,0.826530612244898,0.827
+Table 13,Recall at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete TB,0.2916666666666667,0.292
+Table 13,Recall at fixed threshold 0.5 (higher is better),ResNet-101,Avg (2 labels),0.5590986394557823,0.559
+Table 13,Recall at fixed threshold 0.5 (higher is better),ResNet-101,Healthy,0.9964912280701754,0.996
+Table 13,Recall at fixed threshold 0.5 (higher is better),ResNet-101,Active-only,0.7395833333333334,0.740
+Table 13,Recall at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete-only,0.045454545454545456,0.045
+Table 13,Recall at fixed threshold 0.5 (higher is better),ResNet-101,Both†,0.0,0.000
+Table 13,Recall at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active TB,0.9897959183673469,0.990
+Table 13,Recall at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete TB,0.0,0.000
+Table 13,Recall at fixed threshold 0.5 (higher is better),EfficientNet-B0,Avg (2 labels),0.49489795918367346,0.495
+Table 13,Recall at fixed threshold 0.5 (higher is better),EfficientNet-B0,Healthy,0.9964912280701754,0.996
+Table 13,Recall at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active-only,0.9895833333333334,0.990
+Table 13,Recall at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete-only,0.0,0.000
+Table 13,Recall at fixed threshold 0.5 (higher is better),EfficientNet-B0,Both†,0.0,0.000
+Table 13,Recall at fixed threshold 0.5 (higher is better),YOLOv8s,Active TB,—,—
+Table 13,Recall at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete TB,—,—
+Table 13,Recall at fixed threshold 0.5 (higher is better),YOLOv8s,Avg (2 labels),—,—
+Table 13,Recall at fixed threshold 0.5 (higher is better),YOLOv8s,Healthy,—,—
+Table 13,Recall at fixed threshold 0.5 (higher is better),YOLOv8s,Active-only,—,—
+Table 13,Recall at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 13,Recall at fixed threshold 0.5 (higher is better),YOLOv8s,Both†,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),DenseNet-121,Active TB,0.972972972972973,0.973
+Table 14,Specificity at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete TB,0.9804804804804805,0.980
+Table 14,Specificity at fixed threshold 0.5 (higher is better),DenseNet-121,Avg (2 labels),0.9767267267267268,0.977
+Table 14,Specificity at fixed threshold 0.5 (higher is better),DenseNet-121,Healthy,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),DenseNet-121,Active-only,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete-only,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),DenseNet-121,Both†,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),ResNet-101,Active TB,0.9679054054054054,0.968
+Table 14,Specificity at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete TB,0.9714714714714715,0.971
+Table 14,Specificity at fixed threshold 0.5 (higher is better),ResNet-101,Avg (2 labels),0.9696884384384384,0.970
+Table 14,Specificity at fixed threshold 0.5 (higher is better),ResNet-101,Healthy,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),ResNet-101,Active-only,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete-only,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),ResNet-101,Both†,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active TB,0.9628378378378378,0.963
+Table 14,Specificity at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete TB,1.0,1.000
+Table 14,Specificity at fixed threshold 0.5 (higher is better),EfficientNet-B0,Avg (2 labels),0.9814189189189189,0.981
+Table 14,Specificity at fixed threshold 0.5 (higher is better),EfficientNet-B0,Healthy,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active-only,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete-only,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),EfficientNet-B0,Both†,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),YOLOv8s,Active TB,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete TB,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),YOLOv8s,Avg (2 labels),—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),YOLOv8s,Healthy,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),YOLOv8s,Active-only,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 14,Specificity at fixed threshold 0.5 (higher is better),YOLOv8s,Both†,—,—
+Table 15,F1 at fixed threshold 0.5 (higher is better),DenseNet-121,Active TB,0.7872340425531914,0.787
+Table 15,F1 at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete TB,0.19512195121951217,0.195
+Table 15,F1 at fixed threshold 0.5 (higher is better),DenseNet-121,Avg (2 labels),0.4911779968863518,0.491
+Table 15,F1 at fixed threshold 0.5 (higher is better),DenseNet-121,Healthy,0.9835497835497835,0.984
+Table 15,F1 at fixed threshold 0.5 (higher is better),DenseNet-121,Active-only,0.7717391304347826,0.772
+Table 15,F1 at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete-only,0.16216216216216217,0.162
+Table 15,F1 at fixed threshold 0.5 (higher is better),DenseNet-121,Both†,0.0,0.000
+Table 15,F1 at fixed threshold 0.5 (higher is better),ResNet-101,Active TB,0.8181818181818183,0.818
+Table 15,F1 at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete TB,0.27999999999999997,0.280
+Table 15,F1 at fixed threshold 0.5 (higher is better),ResNet-101,Avg (2 labels),0.5490909090909092,0.549
+Table 15,F1 at fixed threshold 0.5 (higher is better),ResNet-101,Healthy,0.9895470383275261,0.990
+Table 15,F1 at fixed threshold 0.5 (higher is better),ResNet-101,Active-only,0.7802197802197802,0.780
+Table 15,F1 at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete-only,0.058823529411764705,0.059
+Table 15,F1 at fixed threshold 0.5 (higher is better),ResNet-101,Both†,0.0,0.000
+Table 15,F1 at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active TB,0.8940092165898618,0.894
+Table 15,F1 at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete TB,0.0,0.000
+Table 15,F1 at fixed threshold 0.5 (higher is better),EfficientNet-B0,Avg (2 labels),0.4470046082949309,0.447
+Table 15,F1 at fixed threshold 0.5 (higher is better),EfficientNet-B0,Healthy,0.9956178790534619,0.996
+Table 15,F1 at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active-only,0.8837209302325582,0.884
+Table 15,F1 at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete-only,0.0,0.000
+Table 15,F1 at fixed threshold 0.5 (higher is better),EfficientNet-B0,Both†,0.0,0.000
+Table 15,F1 at fixed threshold 0.5 (higher is better),YOLOv8s,Active TB,—,—
+Table 15,F1 at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete TB,—,—
+Table 15,F1 at fixed threshold 0.5 (higher is better),YOLOv8s,Avg (2 labels),—,—
+Table 15,F1 at fixed threshold 0.5 (higher is better),YOLOv8s,Healthy,—,—
+Table 15,F1 at fixed threshold 0.5 (higher is better),YOLOv8s,Active-only,—,—
+Table 15,F1 at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 15,F1 at fixed threshold 0.5 (higher is better),YOLOv8s,Both†,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Active TB,0.9810310948703806,0.981
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete TB,0.9289914914914915,0.929
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Avg (2 labels),0.955011293180936,0.955
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Healthy,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Active-only,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete-only,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Both†,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Active TB,0.9855815637065637,0.986
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete TB,0.8632382382382382,0.863
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Avg (2 labels),0.9244099009724009,0.924
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Healthy,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Active-only,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete-only,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Both†,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active TB,0.9807380722559295,0.981
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete TB,0.922484984984985,0.922
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Avg (2 labels),0.9516115286204572,0.952
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Healthy,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active-only,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete-only,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Both†,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Active TB,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete TB,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Avg (2 labels),—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Healthy,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Active-only,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 16,ROC-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Both†,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Active TB,0.855107896024006,0.855
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete TB,0.20774075771242642,0.208
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Avg (2 labels),0.5314243268682163,0.531
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Healthy,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Active-only,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Obsolete-only,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),DenseNet-121,Both†,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Active TB,0.8607905995844829,0.861
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete TB,0.2725106697437753,0.273
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Avg (2 labels),0.5666506346641291,0.567
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Healthy,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Active-only,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Obsolete-only,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),ResNet-101,Both†,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active TB,0.7944126678287635,0.794
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete TB,0.1972382047791733,0.197
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Avg (2 labels),0.4958254363039684,0.496
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Healthy,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Active-only,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Obsolete-only,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),EfficientNet-B0,Both†,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Active TB,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete TB,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Avg (2 labels),—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Healthy,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Active-only,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Obsolete-only,—,—
+Table 17,PR-AUC at fixed threshold 0.5 (higher is better),YOLOv8s,Both†,—,—
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),DenseNet-121,Active TB,98.0,98
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),DenseNet-121,Obsolete TB,24.0,24
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),DenseNet-121,Avg (2 labels),61.0,61.0
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),DenseNet-121,Healthy,570.0,570
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),DenseNet-121,Active-only,96.0,96
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),DenseNet-121,Obsolete-only,22.0,22
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),DenseNet-121,Both†,2.0,2
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),ResNet-101,Active TB,98.0,98
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),ResNet-101,Obsolete TB,24.0,24
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),ResNet-101,Avg (2 labels),61.0,61.0
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),ResNet-101,Healthy,570.0,570
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),ResNet-101,Active-only,96.0,96
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),ResNet-101,Obsolete-only,22.0,22
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),ResNet-101,Both†,2.0,2
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),EfficientNet-B0,Active TB,98.0,98
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),EfficientNet-B0,Obsolete TB,24.0,24
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),EfficientNet-B0,Avg (2 labels),61.0,61.0
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),EfficientNet-B0,Healthy,570.0,570
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),EfficientNet-B0,Active-only,96.0,96
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),EfficientNet-B0,Obsolete-only,22.0,22
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),EfficientNet-B0,Both†,2.0,2
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),YOLOv8s,Active TB,—,—
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),YOLOv8s,Obsolete TB,—,—
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),YOLOv8s,Avg (2 labels),—,—
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),YOLOv8s,Healthy,—,—
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),YOLOv8s,Active-only,—,—
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),YOLOv8s,Obsolete-only,—,—
+Table 18,Evaluation Support at fixed threshold 0.5 (number of test images),YOLOv8s,Both†,—,—
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),DenseNet-121,Exact-match acc.,0.9304347826086956,0.930
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),DenseNet-121,Hamming acc.,0.9471014492753623,0.947
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),DenseNet-121,Macro-F1,0.4911779968863518,0.491
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),DenseNet-121,Weighted-F1,0.6707529754055824,0.671
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),DenseNet-121,Category acc.,0.9304347826086956,0.930
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),ResNet-101,Exact-match acc.,0.927536231884058,0.928
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),ResNet-101,Hamming acc.,0.9478260869565217,0.948
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),ResNet-101,Macro-F1,0.5490909090909092,0.549
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),ResNet-101,Weighted-F1,0.7123099850968705,0.712
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),ResNet-101,Category acc.,0.927536231884058,0.928
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),EfficientNet-B0,Exact-match acc.,0.9608695652173913,0.961
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),EfficientNet-B0,Hamming acc.,0.9659420289855073,0.966
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),EfficientNet-B0,Macro-F1,0.4470046082949309,0.447
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),EfficientNet-B0,Weighted-F1,0.7181385510312004,0.718
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),EfficientNet-B0,Category acc.,0.9608695652173913,0.961
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),YOLOv8s,Exact-match acc.,—,—
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),YOLOv8s,Hamming acc.,—,—
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),YOLOv8s,Macro-F1,—,—
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),YOLOv8s,Weighted-F1,—,—
+Table 19,Overall classification performance at fixed threshold 0.5 (higher is better),YOLOv8s,Category acc.,—,—
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),DenseNet-121,Precision,0.9809523809523809,0.981
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),DenseNet-121,Recall,0.8583333333333333,0.858
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),DenseNet-121,F1,0.9155555555555556,0.916
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),ResNet-101,Precision,0.9821428571428571,0.982
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),ResNet-101,Recall,0.9166666666666666,0.917
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),ResNet-101,F1,0.9482758620689654,0.948
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),EfficientNet-B0,Precision,0.9831932773109243,0.983
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),EfficientNet-B0,Recall,0.975,0.975
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),EfficientNet-B0,F1,0.9790794979079498,0.979
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),YOLOv8s,Precision,—,—
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),YOLOv8s,Recall,—,—
+Table 20,Binary Any TB vs Healthy screening performance at fixed threshold 0.5 (higher is better),YOLOv8s,F1,—,—
+Table 21,Obsolete TB discrimination within TB cases only at fixed threshold 0.5 (higher is better),DenseNet-121,ROC-AUC,0.5546875,0.555
+Table 21,Obsolete TB discrimination within TB cases only at fixed threshold 0.5 (higher is better),DenseNet-121,PR-AUC,0.22143857626013477,0.221
+Table 21,Obsolete TB discrimination within TB cases only at fixed threshold 0.5 (higher is better),ResNet-101,ROC-AUC,0.5694444444444445,0.569
+Table 21,Obsolete TB discrimination within TB cases only at fixed threshold 0.5 (higher is better),ResNet-101,PR-AUC,0.2910300349519237,0.291
+Table 21,Obsolete TB discrimination within TB cases only at fixed threshold 0.5 (higher is better),EfficientNet-B0,ROC-AUC,0.47135416666666663,0.471
+Table 21,Obsolete TB discrimination within TB cases only at fixed threshold 0.5 (higher is better),EfficientNet-B0,PR-AUC,0.1985370557374567,0.199
+Table 21,Obsolete TB discrimination within TB cases only at fixed threshold 0.5 (higher is better),YOLOv8s,ROC-AUC,—,—
+Table 21,Obsolete TB discrimination within TB cases only at fixed threshold 0.5 (higher is better),YOLOv8s,PR-AUC,—,—
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,Precision,0.5679012345679012,0.568
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,Recall,0.6433566433566433,0.643
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,F1,0.6032786885245902,0.603
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,TP,92,92
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,FP,70,70
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,FN,51,51
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,GT boxes,143,143
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,Pred boxes,162,162
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,AP50 / mAP50,0.6217603700144424,0.622
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,AP75 / mAP75,0.21756872607788136,0.218
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Active TB,AP50-95 / mAP50-95,0.2874879765573447,0.287
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,Precision,0.0,0.000
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,Recall,0.0,0.000
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,F1,0.0,0.000
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,TP,0,0
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,FP,0,0
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,FN,36,36
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,GT boxes,36,36
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,Pred boxes,0,0
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,AP50 / mAP50,0.13957673952391036,0.140
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,AP75 / mAP75,0.03621789620965293,0.036
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,Obsolete TB,AP50-95 / mAP50-95,0.04694701221256698,0.047
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,Precision,0.2839506172839506,0.284
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,Recall,0.32167832167832167,0.322
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,F1,0.3016393442622951,0.302
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,TP,92,92
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,FP,70,70
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,FN,87,87
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,GT boxes,179,179
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,Pred boxes,162,162
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,AP50 / mAP50,0.3806685547691764,0.381
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,AP75 / mAP75,0.12689331114376715,0.127
+Table 22,YOLOv8s Bounding-Box Detection and Localization Performance,All classes,AP50-95 / mAP50-95,0.1672174943849558,0.167

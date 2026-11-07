@@ -1,0 +1,48 @@
+{
+  "timestamp_utc": "2026-11-07T06:31:09.786934+00:00",
+  "threshold_selection_protocol": "Validation F1-maximization (sweep 0.01 to 0.95 in 0.01 steps)",
+  "validation_dataset": "data_prep/splits/val.csv (690 samples)",
+  "checkpoint_path": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\CLASSIFICATION\\ResNet-101\\outputs\\train\\best_model.pth",
+  "checkpoint_epoch": 40,
+  "per_label": {
+    "ActiveTuberculosis": {
+      "threshold": 0.105,
+      "validation_f1": 0.925764,
+      "validation_precision": 0.876033,
+      "validation_recall": 0.981481,
+      "validation_specificity": 0.974227,
+      "validation_positives": 108,
+      "tie_set": [
+        0.09,
+        0.1,
+        0.11,
+        0.12
+      ],
+      "fallback_to_0.5": false
+    },
+    "ObsoletePulmonaryTuberculosis": {
+      "threshold": 0.06,
+      "validation_f1": 0.277778,
+      "validation_precision": 0.164835,
+      "validation_recall": 0.882353,
+      "validation_specificity": 0.887073,
+      "validation_positives": 17,
+      "tie_set": [
+        0.06
+      ],
+      "fallback_to_0.5": false
+    }
+  },
+  "shared_threshold": {
+    "threshold": 0.06,
+    "validation_macro_f1": 0.597763,
+    "tie_set": [
+      0.06
+    ],
+    "fallback_to_0.5": false
+  },
+  "validation_positives_per_label": {
+    "ActiveTuberculosis": 108,
+    "ObsoletePulmonaryTuberculosis": 17
+  }
+}

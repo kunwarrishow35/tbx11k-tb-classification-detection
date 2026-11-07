@@ -1,0 +1,4 @@
+setting,thresholds,macro_f1,active_f1,active_precision,active_recall,obsolete_f1,obsolete_precision,obsolete_recall,exact_match_accuracy,active_roc_auc,active_pr_auc,obsolete_roc_auc,obsolete_pr_auc
+fixed_0.5,0.50 / 0.50,0.491178,0.787234,0.822222,0.755102,0.195122,0.235294,0.166667,0.930435,0.981031,0.855108,0.928991,0.207741
+shared_val_tuned,0.3900 / 0.3900,0.476923,0.8,0.804124,0.795918,0.153846,0.142857,0.166667,0.923188,0.981031,0.855108,0.928991,0.207741
+per_label_val_tuned,0.1800 / 0.3900,0.492811,0.831776,0.767241,0.908163,0.153846,0.142857,0.166667,0.918841,0.981031,0.855108,0.928991,0.207741

@@ -1,0 +1,125 @@
+==============================================================================
+          YOLOV8S MULTI-TASK TEST EVALUATION REPORT (TBX11K DATASET)          
+==============================================================================
+
+1. EXPERIMENTAL CONFIGURATION & HARDWARE METADATA
+------------------------------------------------------------------------------
+  Model Architecture:        YOLOv8s (yolov8s.yaml, trained from scratch)
+  Pretrained Weights:        None (pretrained=False)
+  Checkpoint File:           C:\Users\kunwa\Desktop\IEEE RESEARCH\yolo\runs\baseline_yolov8s_scratch\weights\best.pt
+  Checkpoint File Size:      21.46 MB
+  Input Resolution:          512x512x3
+  Target Split:              Canonical test split (690 images)
+  Total Test Bounding Boxes: 179 boxes (143 Active, 36 Obsolete)
+  Test Healthy Images:       570 genuine background images (empty label files)
+  Evaluation Compute Device: cuda:0 (NVIDIA GeForce RTX 4050 Laptop GPU)
+
+2. VALIDATION-BASED CONFIDENCE THRESHOLD OPTIMIZATION
+------------------------------------------------------------------------------
+  Optimization Methodology:  Evaluated thresholds [0.01, 0.95] (step 0.01) on val split
+  Primary Objective Metric:  Validation Macro-F1 across detection classes
+  Object Matching Protocol:  Greedy IoU matching at IoU >= 0.50
+  Selected Optimal Threshold:0.21 (tau* frozen for test set)
+  Validation Performance:    Macro-F1 = 0.3204, Micro-F1 = 0.5994
+    - ActiveTuberculosis:    Precision = 0.6605, Recall = 0.6221, F1 = 0.6407
+    - ObsoletePulmonaryTB:   Precision = 0.0000, Recall = 0.0000, F1 = 0.0000
+  Leakage Prevention:        Strict zero test-set ground-truth leakage confirmed.
+
+3. FINAL TEST-SET OBJECT DETECTION PERFORMANCE (IoU = 0.50)
+------------------------------------------------------------------------------
+  [Standard Ultralytics Multi-Threshold Metrics]
+    Overall mAP@50:          0.3807
+    Overall mAP@75:          0.1269
+    Overall mAP@50-95:       0.1672
+    ActiveTuberculosis:      AP@50 = 0.6218, AP@75 = 0.2176, mAP@50-95 = 0.2875
+    ObsoletePulmonaryTB:     AP@50 = 0.1396, AP@75 = 0.0362, mAP@50-95 = 0.0469
+
+  [Discrete Detection Metrics at Frozen Threshold tau* = 0.21]
+    Macro Detection F1:      0.3016
+    Macro Precision:         0.2840
+    Macro Recall:            0.3217
+    Micro Detection F1:      0.5396
+    Total True Positives:    92
+    Total False Positives:   70
+    Total False Negatives:   87
+
+  [Per-Class Detection Breakdown]
+    * ActiveTuberculosis:
+        Ground-Truth Boxes:  143
+        Predicted Boxes:     162
+        True Positives (TP): 92
+        False Positives (FP):70
+        False Negatives (FN):51
+        Precision:           0.5679
+        Recall (Sensitivity):0.6434
+        F1-Score:            0.6033
+    * ObsoletePulmonaryTuberculosis:
+        Ground-Truth Boxes:  36
+        Predicted Boxes:     0
+        True Positives (TP): 0
+        False Positives (FP):0
+        False Negatives (FN):36
+        Precision:           0.0000
+        Recall (Sensitivity):0.0000
+        F1-Score:            0.0000
+
+4. DERIVED IMAGE-LEVEL MULTI-LABEL CLASSIFICATION PERFORMANCE
+------------------------------------------------------------------------------
+  Aggregation Mechanism:     Continuous max-score pooling per class across image detections
+  Binary Decision Rule:      Present if max_conf >= tau* (0.21) else Absent
+  Subset Exact-Match Acc:    93.19%  (Both binary disease states match GT)
+  Hamming Accuracy:          95.36%  (1.0 - Hamming Loss)
+  Hamming Loss:              0.0464  (Fraction of misclassified labels)
+  Derived Category Accuracy: 93.19%
+  Category Macro-F1:         0.4387
+  Category Weighted-F1:      0.9146
+
+  [Binary Presence Ranking & Diagnostic Accuracy]
+    * ActiveTuberculosis:
+        Positive Prevalence: 98 / 690 (14.20%)
+        Precision:           0.8085
+        Recall (Sensitivity):0.7755
+        Specificity:         0.9696
+        F1-Score:            0.7917
+        ROC-AUC:             0.9719
+        PR-AUC (Avg Prec):   0.8362
+        Confusion Matrix:    TP=76, FP=18, FN=22, TN=574
+    * ObsoletePulmonaryTuberculosis:
+        Positive Prevalence: 24 / 690 (3.48%)
+        Precision:           0.0000
+        Recall (Sensitivity):0.0000
+        Specificity:         1.0000
+        F1-Score:            0.0000
+        ROC-AUC:             0.8147
+        PR-AUC (Avg Prec):   0.2294
+        Confusion Matrix:    TP=0, FP=0, FN=24, TN=666
+
+  [Derived Four-Category Breakdown]
+  Category         | Precision  | Recall     | F1-Score   | Support 
+  -----------------+------------+------------+------------+---------
+  Healthy          | 0.9547     | 0.9982     | 0.9760     | 570     
+  Active_only      | 0.7872     | 0.7708     | 0.7789     | 96      
+  Obsolete_only    | 0.0000     | 0.0000     | 0.0000     | 22      
+  Both             | 0.0000     | 0.0000     | 0.0000     | 2       
+
+5. COMPUTATIONAL EFFICIENCY & INFERENCE BENCHMARKS
+------------------------------------------------------------------------------
+  Unfused Architecture:     129 layers, 11,136,374 parameters, 28.64 GFLOPs
+  Fused Inference Model:     72 layers, 11,126,358 parameters, 28.43 GFLOPs
+  thop MACs Count:           9.10 GigaMACs
+  thop FLOPs Count:          18.20 GigaFLOPs (1 MAC = 2 floating point operations)
+  Inference Compute Device:  cuda:0 (NVIDIA GeForce RTX 4050 Laptop GPU)
+  Precision Mode:            FP16 Autocast
+  Single-Image Latency (B=1):11.33 ms (+/- 0.54 ms)
+  Single-Image Median / Range: Median: 11.33 ms | Min: 10.45 ms, Max: 12.82 ms
+  Single-Image Throughput:   88.23 FPS (frames per second)
+  Batched Throughput (B=4):   346.70 images/sec (11.54 ms per batch)
+
+6. METHODOLOGY & CLINICAL / OBJECT-DETECTION NOTES
+------------------------------------------------------------------------------
+  - The validation confidence threshold was tuned exclusively on data_prep/splits/val.csv.
+  - Test-set evaluation used the frozen threshold without post-hoc tuning.
+  - 570 test images are healthy background images; all false detections on them are counted as FPs.
+  - Max-pooling derivation of image presence preserves end-to-end multi-task consistency.
+  - Latency timing employs CUDA hardware synchronization to eliminate GPU queue latency distortion.
+==============================================================================

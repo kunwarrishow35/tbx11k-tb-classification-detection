@@ -1,0 +1,79 @@
+==============================================================================
+                RESNET-101 MULTI-LABEL TEST EVALUATION REPORT                 
+==============================================================================
+
+1. EXPERIMENTAL CONFIGURATION & HARDWARE METADATA
+------------------------------------------------------------------------------
+  Model Architecture:        ResNet-101 (Torchvision ResNet V1.5 variant)
+  Pretrained Weights:        None (Trained from scratch)
+  Input Resolution:          512 x 512, 3 channels (RGB)
+  Normalization:             NONE (ToTensor() scaled to [0.0, 1.0])
+  Target Split:              Canonical test.csv (690 images)
+  Probability Threshold:     0.5
+  Best Checkpoint Loaded:    Epoch 40 (Val Macro-F1: 0.5318093855829705)
+  Evaluation Compute Device: cuda (NVIDIA GeForce RTX 4050 Laptop GPU)
+  Inference Precision:       FP16 Autocast
+  PyTorch Version:           2.14.1+cu130
+
+2. OVERALL CLASSIFICATION PERFORMANCE
+------------------------------------------------------------------------------
+  Subset Exact-Match Acc:    92.75%  (Definition: both binary labels match GT)
+  Hamming Accuracy:          94.78%  (1.0 - Hamming Loss)
+  Hamming Loss:              0.0522  (Fraction of misclassified labels)
+  Macro-F1 (Unweighted):     0.5491  (Arithmetic mean of Active & Obsolete F1)
+  Weighted-F1 (By Support):  0.7123  (Weighted by positive class prevalence)
+  Derived Category Accuracy: 92.75%
+  Total Test Images:         690
+
+3. PER-LABEL CLASSIFICATION METRICS
+------------------------------------------------------------------------------
+  [ActiveTuberculosis]
+    Positive Support:        98 (14.20%)
+    Binary Accuracy:         94.78%
+    Precision:               0.8100
+    Sensitivity (Recall):    0.8265
+    Specificity:             0.9679
+    F1-Score:                0.8182
+    ROC-AUC:                 0.9856
+    PR-AUC (Avg Precision):  0.8608
+    Confusion Matrix:        TP=81, FP=19, FN=17, TN=573
+
+  [ObsoletePulmonaryTuberculosis]
+    Positive Support:        24 (3.48%)
+    Binary Accuracy:         94.78%
+    Precision:               0.2692
+    Sensitivity (Recall):    0.2917
+    Specificity:             0.9715
+    F1-Score:                0.2800
+    ROC-AUC:                 0.8627
+    PR-AUC (Avg Precision):  0.2725
+    Confusion Matrix:        TP=7, FP=19, FN=17, TN=647
+
+4. DERIVED FOUR-CATEGORY CLASSIFICATION PERFORMANCE
+------------------------------------------------------------------------------
+  Category         | Precision  | Recall     | F1-Score   | Support 
+  -----------------+------------+------------+------------+---------
+  Healthy          | 0.9827     | 0.9965     | 0.9895     | 570     
+  Active_Only      | 0.8256     | 0.7396     | 0.7802     | 96      
+  Obsolete_Only    | 0.0833     | 0.0455     | 0.0588     | 22      
+  Both             | 0.0000     | 0.0000     | 0.0000     | 2       
+
+5. COMPUTATIONAL EFFICIENCY & INFERENCE BENCHMARKS
+------------------------------------------------------------------------------
+  Total Parameter Count:     42,504,258
+  Trainable Parameters:      42,504,258
+  MACs (Multiply-Accumulate):41.09 GigaMACs (thop (ultralytics_thop))
+  FLOPs:                     82.17 GigaFLOPs (1 MAC = 2 floating point operations)
+  Single-Image Latency (B=1):36.98 ms (+/- 3.24 ms)
+  Single-Image Range:        Min: 33.74 ms, Max: 56.31 ms
+  Single-Image Throughput:   27.04 FPS (frames per second)
+  Batched Throughput (B=4):   108.83 images/sec (36.75 ms per batch)
+
+6. METHODOLOGY & CLINICAL INTERPRETATION NOTES
+------------------------------------------------------------------------------
+  - Multi-label sigmoid threshold fixed at 0.5. No test-set threshold tuning performed.
+  - The 4 categories are strictly derived from independent binary predictions:
+      Healthy=(0,0), Active_Only=(1,0), Obsolete_Only=(0,1), Both=(1,1).
+  - Exact-match requires correctly predicting both disease states simultaneously.
+  - Latency timing employs CUDA synchronization to prevent asynchronous GPU queue bias.
+==============================================================================

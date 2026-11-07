@@ -1,0 +1,167 @@
+{
+  "experiment_name": "EfficientNet-B0 Multi-Label Chest X-Ray Classification",
+  "project": "IEEE RESEARCH - TBX11K Classification",
+  "authoritative_specification": "EfficientNet_Official_Hyperparameters.pdf (tensorflow/tpu models/official/efficientnet) & IEEE Research Protocol",
+  "order_of_authority": "PDF for model optimization and hyperparameters; Section 3 of directives for dataset and hardware boundaries; ResNet-101 templates for code structure, tracking, and evaluation.",
+  "model": {
+    "architecture": "EfficientNet-B0",
+    "implementation": "torchvision.models.efficientnet_b0",
+    "weights": null,
+    "pretrained": false,
+    "classifier_in_features": 1280,
+    "classifier_out_features": 2,
+    "total_parameters": 4010110,
+    "trainable_parameters": 4010110,
+    "dropout_rate": 0.2,
+    "stochastic_depth_prob": 0.2,
+    "batch_norm": {
+      "momentum": 0.01,
+      "epsilon": 0.001,
+      "note": "PyTorch momentum 0.01 is mathematically equivalent to TensorFlow momentum 0.99 (running_mean = 0.99 * running_mean + 0.01 * batch_mean)."
+    }
+  },
+  "dataset": {
+    "name": "TBX11K",
+    "task": "Multi-label binary classification",
+    "target_columns": [
+      "ActiveTuberculosis",
+      "ObsoletePulmonaryTuberculosis"
+    ],
+    "target_mapping": {
+      "Healthy": [0, 0],
+      "Active_Only": [1, 0],
+      "Obsolete_Only": [0, 1],
+      "Both": [1, 1]
+    },
+    "splits": {
+      "train": {
+        "manifest": "data_prep/splits/train.csv",
+        "sample_count": 3219,
+        "healthy_count": 2660,
+        "active_only_count": 431,
+        "obsolete_only_count": 105,
+        "both_count": 23,
+        "total_active_positives": 454,
+        "total_obsolete_positives": 128
+      },
+      "val": {
+        "manifest": "data_prep/splits/val.csv",
+        "sample_count": 690,
+        "healthy_count": 570,
+        "active_only_count": 103,
+        "obsolete_only_count": 12,
+        "both_count": 5,
+        "total_active_positives": 108,
+        "total_obsolete_positives": 17
+      },
+      "test": {
+        "manifest": "data_prep/splits/test.csv",
+        "sample_count": 690,
+        "healthy_count": 570,
+        "active_only_count": 96,
+        "obsolete_only_count": 22,
+        "both_count": 2,
+        "total_active_positives": 98,
+        "total_obsolete_positives": 24
+      },
+      "total_dataset_samples": 4599
+    }
+  },
+  "preprocessing": {
+    "train": {
+      "pipeline": "OfficialInceptionCrop -> Bicubic Resize(512, 512) -> RandomHorizontalFlip(0.5) -> ToTensor() -> ImageNet Normalization",
+      "crop": "TF sample_distorted_bounding_box equivalent: up to 10 attempts, area fraction U(0.08, 1.0), coverage >= 0.1, aspect ratio U(0.75, 1.3333) uniform, fallback to center crop min(h,w)*512/544",
+      "interpolation": "BICUBIC",
+      "resolution": [512, 512],
+      "mean": [0.485, 0.456, 0.406],
+      "std": [0.229, 0.224, 0.225]
+    },
+    "eval": {
+      "pipeline": "Bilinear Resize(512, 512) -> ToTensor() -> ImageNet Normalization",
+      "interpolation": "BILINEAR",
+      "resolution": [512, 512],
+      "crop": "none (deterministic full-image evaluation)",
+      "mean": [0.485, 0.456, 0.406],
+      "std": [0.229, 0.224, 0.225]
+    }
+  },
+  "hyperparameters": {
+    "num_epochs": 70,
+    "batch_size": 4,
+    "batch_size_fallback": 2,
+    "gradient_accumulation_steps": 1,
+    "effective_batch_size": 4,
+    "steps_per_epoch": 805,
+    "total_optimizer_steps": 56350,
+    "optimizer": {
+      "class": "timm.optim.RMSpropTF",
+      "alpha": 0.9,
+      "momentum": 0.9,
+      "eps": 0.001,
+      "weight_decay": 0.00001,
+      "weight_decay_rule": "L2 decay of 1e-5 applied strictly to Conv/Linear weights and biases (including classifier bias); BatchNorm weights and biases have weight_decay=0.0."
+    },
+    "learning_rate_schedule": {
+      "rule": "Linear scaling from base_lr=0.016 at batch 256: scaled_lr = 0.016 * (4 / 256) = 0.00025.",
+      "warmup_epochs": 5.0,
+      "warmup_steps": 4025,
+      "decay_epochs": 2.4,
+      "decay_steps": 1932,
+      "decay_rate": 0.97,
+      "decay_style": "Staircase exponential decay starting from step 0.",
+      "key_checkpoints": {
+        "step_0": 0.0,
+        "step_2012": 0.00012497,
+        "step_4025": 0.00023523,
+        "step_56349": 0.00010335
+      }
+    },
+    "ema": {
+      "max_decay": 0.9999,
+      "decay_formula": "min(0.9999, (1 + num_updates) / (10 + num_updates))",
+      "update_scope": "All floating-point model state_dict tensors including BatchNorm running_mean and running_var; integer buffers copied.",
+      "step_condition": "Updated only on successful optimizer steps; skipped if GradScaler detects inf/nan."
+    },
+    "loss_function": "BCEWithLogitsLoss()",
+    "early_stopping": "none (always executes all 70 epochs)",
+    "checkpoint_selection": "Best EMA validation macro-F1 at threshold 0.5 saved to best_model.pth; last epoch saved to last_checkpoint.pth",
+    "seed": 42,
+    "num_workers": 2,
+    "mixed_precision": "FP16 autocast with GradScaler"
+  },
+  "deviations": {
+    "dataset_related": [
+      "2-output multi-label binary classification with BCEWithLogitsLoss instead of 1000-class Softmax Cross-Entropy.",
+      "No label smoothing (not mathematically defined for multi-label binary classification).",
+      "512x512 resolution instead of 224x224 (higher resolution preserves small pulmonary lesions).",
+      "Evaluation preprocessing uses Bilinear Resize(512, 512) without 0.875 center crop to match ResNet/DenseNet conventions.",
+      "Fixed 70-epoch budget instead of ~350 ImageNet epochs."
+    ],
+    "system_related": [
+      "Physical batch size 4 due to 6 GB VRAM constraint on RTX 4050 Laptop GPU.",
+      "Learning rate linearly scaled to 0.00025 per official rule (0.016 * 4 / 256).",
+      "PyTorch 2.14 and timm 1.0.30 runtime with native AMP FP16 autocast."
+    ],
+    "unverified": [
+      "RMSpropTF is not bit-identical to TF1.",
+      "torchvision init and stochastic-depth scaling are not verified line by line.",
+      "The official main.py snapshot may be older than the live repo.",
+      "The batch-4 LR comes from the scaling rule, not from an official run.",
+      "BatchNorm is noisy at batch 4.",
+      "The crop (0.08 area) can cut small lesions.",
+      "TF crop internals come from documented TF op behavior.",
+      "Label smoothing is omitted.",
+      "Model selection and 70 epochs are project choices."
+    ]
+  },
+  "hardware_environment": {
+    "os": "Windows",
+    "python_version": "3.11.15",
+    "pytorch_version": "2.14.1+cu130",
+    "torchvision_version": "0.29.1+cu130",
+    "timm_version": "1.0.30",
+    "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpu_vram_gb": 6.0
+  }
+}
+

@@ -1,0 +1,66 @@
+================================================================================
+  EFFICIENTNET-B0 MULTI-LABEL CHEST X-RAY EVALUATION REPORT
+  Target Split: Canonical test.csv (690 images)
+  Weights Evaluated: EMA
+================================================================================
+
+1. EXPERIMENTAL CONFIGURATION & MODEL PROVENANCE
+  Architecture:              EfficientNet-B0 (from scratch, weights=None)
+  Resolution:                512 x 512 (Bilinear resize, ToTensor, ImageNet Norm)
+  Trained Epochs:            70
+  Global Step Evaluated:     56325
+  Validation Macro-F1:       0.469565
+  Decision Threshold:        Fixed tau = 0.50 across all labels
+  Target Split Size:         690 CXR images (570 Healthy, 120 TB)
+
+2. OVERALL MULTI-LABEL CLASSIFICATION METRICS
+  Subset Exact Match Acc:    96.38% (0.963768)
+  Hamming Loss:              0.033333
+  Hamming Accuracy:          96.67%
+  Macro-F1 Score:            0.449541
+  Weighted-F1 Score:         0.722214
+  4-Category Overall Acc:    96.38%
+
+3. PER-LABEL BINARY METRICS
+  --- ActiveTuberculosis ---
+    Positive Support:        98 / 690
+    Negative Support:        592 / 690
+    Accuracy:                96.81%
+    Precision (PPV):         0.816667
+    Sensitivity (Recall):    1.000000
+    Specificity (TNR):       0.962838
+    F1 Score:                0.899083
+    AUROC:                   0.979816
+    PR-AUC (Avg Precision):  0.799290
+    Confusion Matrix:        TP=98, FP=22, FN=0, TN=570
+
+  --- ObsoletePulmonaryTuberculosis ---
+    Positive Support:        24 / 690
+    Negative Support:        666 / 690
+    Accuracy:                96.52%
+    Precision (PPV):         0.000000
+    Sensitivity (Recall):    0.000000
+    Specificity (TNR):       1.000000
+    F1 Score:                0.000000
+    AUROC:                   0.917230
+    PR-AUC (Avg Precision):  0.225150
+    Confusion Matrix:        TP=0, FP=0, FN=24, TN=666
+
+4. DERIVED 4-CATEGORY METRICS (MUTUALLY EXCLUSIVE)
+  Category         | Precision  | Recall     | F1-Score   | Support 
+  --------------------------------------------------------------
+  Healthy          | 0.998246   | 0.998246   | 0.998246   | 570     
+  Active_Only      | 0.800000   | 1.000000   | 0.888889   | 96      
+  Obsolete_Only    | 0.000000   | 0.000000   | 0.000000   | 22      
+  Both             | 0.000000   | 0.000000   | 0.000000   | 2       
+
+5. COMPUTATIONAL COMPLEXITY & BENCHMARKING
+  Total Parameters:          4,010,110
+  Trainable Parameters:      4,010,110
+  FLOPs @ 512x512:           4.32 GFLOPs (1 MAC = 2 floating point operations)
+  MACs @ 512x512:            2.16 GMACs (thop (ultralytics_thop))
+  Single-Image Latency (B=1):14.36 +/- 1.06 ms
+  Latency Range (Min / Max): 13.38 ms / 22.39 ms
+  Throughput @ B=1:          69.6 images/sec
+  Batched Throughput @ B=4:  266.1 images/sec (Batch Latency: 15.03 ms)
+================================================================================

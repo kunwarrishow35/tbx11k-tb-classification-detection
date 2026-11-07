@@ -1,0 +1,157 @@
+{
+  "checkpoint_evaluated": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\CLASSIFICATION\\EfficientNet\\outputs\\train\\best_model.pth",
+  "checkpoint_metadata": {
+    "epoch": 54,
+    "val_macro_f1": 0.4736842105263158
+  },
+  "classification_metrics": {
+    "classification_summary": {
+      "exact_match_accuracy": 0.8260869565217391,
+      "hamming_loss": 0.08768115942028985,
+      "hamming_accuracy": 0.9123188405797101,
+      "macro_f1": 0.6039405684754522,
+      "weighted_f1": 0.7849281992629304,
+      "category_accuracy": 0.8260869565217391,
+      "total_test_samples": 690,
+      "probability_threshold": [
+        0.555,
+        0.06
+      ],
+      "thresholds_per_label": {
+        "ActiveTuberculosis": 0.555,
+        "ObsoletePulmonaryTuberculosis": 0.06
+      },
+      "threshold_source": "val.csv sweep"
+    },
+    "per_label_metrics": {
+      "ActiveTuberculosis": {
+        "confusion_matrix": {
+          "tp": 97,
+          "fp": 20,
+          "fn": 1,
+          "tn": 572
+        },
+        "accuracy": 0.9695652173913043,
+        "precision": 0.8290598290598291,
+        "sensitivity_recall": 0.9897959183673469,
+        "specificity": 0.9662162162162162,
+        "f1_score": 0.9023255813953488,
+        "roc_auc": 0.9807380722559293,
+        "pr_auc": 0.7944126678287635,
+        "support_positives": 98,
+        "support_negatives": 592
+      },
+      "ObsoletePulmonaryTuberculosis": {
+        "confusion_matrix": {
+          "tp": 22,
+          "fp": 98,
+          "fn": 2,
+          "tn": 568
+        },
+        "accuracy": 0.855072463768116,
+        "precision": 0.18333333333333332,
+        "sensitivity_recall": 0.9166666666666666,
+        "specificity": 0.8528528528528528,
+        "f1_score": 0.3055555555555556,
+        "roc_auc": 0.922484984984985,
+        "pr_auc": 0.1972382047791733,
+        "support_positives": 24,
+        "support_negatives": 666
+      }
+    },
+    "per_category_metrics": {
+      "Healthy": {
+        "precision": 0.9964912280701754,
+        "recall": 0.9964912280701754,
+        "f1_score": 0.9964912280701754,
+        "support": 570
+      },
+      "Active_Only": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 96
+      },
+      "Obsolete_Only": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 22
+      },
+      "Both": {
+        "precision": 0.017094017094017096,
+        "recall": 1.0,
+        "f1_score": 0.03361344537815126,
+        "support": 2
+      }
+    },
+    "four_category_confusion_matrix": [
+      [
+        568,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        95
+      ],
+      [
+        2,
+        0,
+        0,
+        20
+      ],
+      [
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "derived_category_names": [
+      "Healthy",
+      "Active_Only",
+      "Obsolete_Only",
+      "Both"
+    ]
+  },
+  "efficiency_metrics": {
+    "model_architecture": "EfficientNet-B0",
+    "total_parameters": 4010110,
+    "trainable_parameters": 4010110,
+    "computational_complexity": {
+      "tool": "thop (ultralytics_thop)",
+      "macs": 2159543296.0,
+      "flops": 4319086592.0,
+      "convention": "1 MAC = 2 floating point operations"
+    },
+    "inference_benchmark": {
+      "single_image": {
+        "batch_size": 1,
+        "input_resolution": "512x512x3",
+        "mean_latency_ms": 13.932697999116499,
+        "std_latency_ms": 0.26584211270511116,
+        "min_latency_ms": 13.431300001684576,
+        "max_latency_ms": 14.78339999448508,
+        "fps": 71.77360767192485,
+        "num_benchmark_runs": 100
+      },
+      "batched": {
+        "batch_size": 4,
+        "mean_batch_latency_ms": 15.068834999838145,
+        "throughput_images_per_sec": 265.4485233956682,
+        "num_benchmark_runs": 100
+      }
+    },
+    "hardware_environment": {
+      "device": "cuda",
+      "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "cuda_available": true,
+      "torch_version": "2.14.1+cu130",
+      "precision_mode": "FP16 Autocast"
+    }
+  }
+}

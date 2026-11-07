@@ -1,0 +1,45 @@
+metric_group,metric_name,value
+overall_classification,exact_match_accuracy,0.8420289855072464
+overall_classification,hamming_loss,0.08333333333333333
+overall_classification,hamming_accuracy,0.9166666666666666
+overall_classification,macro_f1,0.5823886491625831
+overall_classification,weighted_f1,0.755177428772512
+overall_classification,category_accuracy,0.8420289855072464
+overall_classification,total_test_samples,690
+overall_classification,probability_threshold,"[0.105, 0.06]"
+overall_classification,thresholds_per_label,"{""ActiveTuberculosis"": 0.105, ""ObsoletePulmonaryTuberculosis"": 0.06}"
+overall_classification,threshold_source,val.csv sweep
+label_ActiveTuberculosis,accuracy,0.9565217391304348
+label_ActiveTuberculosis,precision,0.765625
+label_ActiveTuberculosis,sensitivity_recall,1.0
+label_ActiveTuberculosis,specificity,0.9493243243243243
+label_ActiveTuberculosis,f1_score,0.8672566371681416
+label_ActiveTuberculosis,roc_auc,0.9855815637065637
+label_ActiveTuberculosis,pr_auc,0.860790599584483
+label_ActiveTuberculosis,support_positives,98
+label_ActiveTuberculosis,support_negatives,592
+label_ObsoletePulmonaryTuberculosis,accuracy,0.8768115942028986
+label_ObsoletePulmonaryTuberculosis,precision,0.18556701030927836
+label_ObsoletePulmonaryTuberculosis,sensitivity_recall,0.75
+label_ObsoletePulmonaryTuberculosis,specificity,0.8813813813813813
+label_ObsoletePulmonaryTuberculosis,f1_score,0.2975206611570248
+label_ObsoletePulmonaryTuberculosis,roc_auc,0.862675175175175
+label_ObsoletePulmonaryTuberculosis,pr_auc,0.2725106697437753
+label_ObsoletePulmonaryTuberculosis,support_positives,24
+label_ObsoletePulmonaryTuberculosis,support_negatives,666
+category_Healthy,precision,0.9964221824686941
+category_Healthy,recall,0.9771929824561404
+category_Healthy,f1_score,0.9867139061116031
+category_Healthy,support,570
+category_Active_Only,precision,0.6470588235294118
+category_Active_Only,recall,0.22916666666666666
+category_Active_Only,f1_score,0.3384615384615385
+category_Active_Only,support,96
+category_Obsolete_Only,precision,0.0
+category_Obsolete_Only,recall,0.0
+category_Obsolete_Only,f1_score,0.0
+category_Obsolete_Only,support,22
+category_Both,precision,0.02127659574468085
+category_Both,recall,1.0
+category_Both,f1_score,0.041666666666666664
+category_Both,support,2

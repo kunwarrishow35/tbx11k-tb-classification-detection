@@ -1,0 +1,106 @@
+{
+  "experiment_name": "ResNet-101 Multi-Label Chest X-Ray Classification",
+  "project": "IEEE RESEARCH - TBX11K Classification",
+  "authoritative_specification": "ResNet101_Official_vs_RTX4050_Training_Settings.pdf & User Implementation Guidelines",
+  "model": {
+    "architecture": "ResNet-101",
+    "implementation": "torchvision.models.resnet101",
+    "variant": "ResNet V1.5 (Torchvision standard: downsampling stride placed in 3x3 conv2 of bottleneck)",
+    "weights": null,
+    "pretrained": false,
+    "bottleneck_blocks": [3, 4, 23, 3],
+    "fc_in_features": 2048,
+    "fc_out_features": 2,
+    "total_parameters": 42504258,
+    "trainable_parameters": 42504258
+  },
+  "dataset": {
+    "name": "TBX11K",
+    "task": "Multi-label binary classification",
+    "target_columns": [
+      "ActiveTuberculosis",
+      "ObsoletePulmonaryTuberculosis"
+    ],
+    "target_mapping": {
+      "Healthy": [0, 0],
+      "Active_Only": [1, 0],
+      "Obsolete_Only": [0, 1],
+      "Both": [1, 1]
+    },
+    "splits": {
+      "train": {
+        "manifest": "data_prep/splits/train.csv",
+        "sample_count": 3219,
+        "healthy_count": 2660,
+        "active_only_count": 431,
+        "obsolete_only_count": 105,
+        "both_count": 23,
+        "total_active_positives": 454,
+        "total_obsolete_positives": 128
+      },
+      "val": {
+        "manifest": "data_prep/splits/val.csv",
+        "sample_count": 690,
+        "healthy_count": 570,
+        "active_only_count": 103,
+        "obsolete_only_count": 12,
+        "both_count": 5,
+        "total_active_positives": 108,
+        "total_obsolete_positives": 17
+      },
+      "test": {
+        "manifest": "data_prep/splits/test.csv",
+        "sample_count": 690,
+        "healthy_count": 570,
+        "active_only_count": 96,
+        "obsolete_only_count": 22,
+        "both_count": 2,
+        "total_active_positives": 98,
+        "total_obsolete_positives": 24
+      },
+      "total_dataset_samples": 4599
+    }
+  },
+  "preprocessing": {
+    "resolution": [512, 512],
+    "color_channels": 3,
+    "color_format": "RGB",
+    "interpolation": "BILINEAR",
+    "normalization": "none",
+    "tensor_scaling": "[0.0, 1.0] via ToTensor()",
+    "augmentation": "none",
+    "notes": "Mandatory requirement: strictly NO ImageNet mean/std normalization and NO data augmentation. This contrasts intentionally with DenseNet-121 which utilized ImageNet mean/std normalization."
+  },
+  "hyperparameters": {
+    "num_epochs": 70,
+    "batch_size": 4,
+    "batch_size_fallback": 2,
+    "gradient_accumulation_steps": 1,
+    "effective_batch_size": 4,
+    "optimizer": "SGD",
+    "learning_rate": 0.01,
+    "momentum": 0.9,
+    "nesterov": false,
+    "weight_decay": 0.0001,
+    "scheduler": "StepLR",
+    "lr_step_size": 30,
+    "lr_gamma": 0.1,
+    "loss_function": "BCEWithLogitsLoss()",
+    "early_stopping_patience": 20,
+    "early_stopping_metric": "val_macro_f1",
+    "probability_threshold": 0.5,
+    "seed": 42,
+    "num_workers": 2,
+    "mixed_precision": "FP16 autocast with GradScaler",
+    "checkpoint_selection": "Best validation macro-F1 saved to best_model.pth; last epoch saved to last_checkpoint.pth"
+  },
+  "hardware_environment": {
+    "os": "Windows",
+    "python_version": "3.11.15",
+    "pytorch_version": "2.14.1+cu130",
+    "torchvision_version": "0.29.1+cu130",
+    "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpu_vram_gb": 6.0
+  }
+}
+

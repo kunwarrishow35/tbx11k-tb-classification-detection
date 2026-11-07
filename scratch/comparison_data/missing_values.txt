@@ -1,0 +1,146 @@
+MISSING / NOT APPLICABLE VALUES REPORT (Total: 143 cells)
+================================================================================
+
+Table: Table 4 | Row: DenseNet-121 | Column: Healthy | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: DenseNet-121 | Column: Active-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: DenseNet-121 | Column: Obsolete-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: DenseNet-121 | Column: Both† | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: ResNet-101 | Column: Healthy | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: ResNet-101 | Column: Active-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: ResNet-101 | Column: Obsolete-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: ResNet-101 | Column: Both† | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: EfficientNet-B0 | Column: Healthy | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: EfficientNet-B0 | Column: Active-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: EfficientNet-B0 | Column: Obsolete-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: EfficientNet-B0 | Column: Both† | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: YOLOv8s | Column: Healthy | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: YOLOv8s | Column: Active-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: YOLOv8s | Column: Obsolete-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 4 | Row: YOLOv8s | Column: Both† | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: DenseNet-121 | Column: Healthy | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: DenseNet-121 | Column: Active-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: DenseNet-121 | Column: Obsolete-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: DenseNet-121 | Column: Both† | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: ResNet-101 | Column: Healthy | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: ResNet-101 | Column: Active-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: ResNet-101 | Column: Obsolete-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: ResNet-101 | Column: Both† | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: EfficientNet-B0 | Column: Healthy | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: EfficientNet-B0 | Column: Active-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: EfficientNet-B0 | Column: Obsolete-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: EfficientNet-B0 | Column: Both† | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: YOLOv8s | Column: Healthy | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: YOLOv8s | Column: Active-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: YOLOv8s | Column: Obsolete-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 6 | Row: YOLOv8s | Column: Both† | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: DenseNet-121 | Column: Healthy | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: DenseNet-121 | Column: Active-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: DenseNet-121 | Column: Obsolete-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: DenseNet-121 | Column: Both† | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: ResNet-101 | Column: Healthy | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: ResNet-101 | Column: Active-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: ResNet-101 | Column: Obsolete-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: ResNet-101 | Column: Both† | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: EfficientNet-B0 | Column: Healthy | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: EfficientNet-B0 | Column: Active-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: EfficientNet-B0 | Column: Obsolete-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: EfficientNet-B0 | Column: Both† | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: YOLOv8s | Column: Healthy | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: YOLOv8s | Column: Active-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: YOLOv8s | Column: Obsolete-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 7 | Row: YOLOv8s | Column: Both† | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 12 | Row: YOLOv8s | Column: Active TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 12 | Row: YOLOv8s | Column: Obsolete TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 12 | Row: YOLOv8s | Column: Avg (2 labels) | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 12 | Row: YOLOv8s | Column: Healthy | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 12 | Row: YOLOv8s | Column: Active-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 12 | Row: YOLOv8s | Column: Obsolete-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 12 | Row: YOLOv8s | Column: Both† | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 13 | Row: YOLOv8s | Column: Active TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 13 | Row: YOLOv8s | Column: Obsolete TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 13 | Row: YOLOv8s | Column: Avg (2 labels) | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 13 | Row: YOLOv8s | Column: Healthy | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 13 | Row: YOLOv8s | Column: Active-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 13 | Row: YOLOv8s | Column: Obsolete-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 13 | Row: YOLOv8s | Column: Both† | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 14 | Row: DenseNet-121 | Column: Healthy | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: DenseNet-121 | Column: Active-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: DenseNet-121 | Column: Obsolete-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: DenseNet-121 | Column: Both† | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: ResNet-101 | Column: Healthy | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: ResNet-101 | Column: Active-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: ResNet-101 | Column: Obsolete-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: ResNet-101 | Column: Both† | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: EfficientNet-B0 | Column: Healthy | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: EfficientNet-B0 | Column: Active-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: EfficientNet-B0 | Column: Obsolete-only | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: EfficientNet-B0 | Column: Both† | Reason: Specificity is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 14 | Row: YOLOv8s | Column: Active TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 14 | Row: YOLOv8s | Column: Obsolete TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 14 | Row: YOLOv8s | Column: Avg (2 labels) | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 14 | Row: YOLOv8s | Column: Healthy | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 14 | Row: YOLOv8s | Column: Active-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 14 | Row: YOLOv8s | Column: Obsolete-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 14 | Row: YOLOv8s | Column: Both† | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 15 | Row: YOLOv8s | Column: Active TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 15 | Row: YOLOv8s | Column: Obsolete TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 15 | Row: YOLOv8s | Column: Avg (2 labels) | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 15 | Row: YOLOv8s | Column: Healthy | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 15 | Row: YOLOv8s | Column: Active-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 15 | Row: YOLOv8s | Column: Obsolete-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 15 | Row: YOLOv8s | Column: Both† | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 16 | Row: DenseNet-121 | Column: Healthy | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: DenseNet-121 | Column: Active-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: DenseNet-121 | Column: Obsolete-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: DenseNet-121 | Column: Both† | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: ResNet-101 | Column: Healthy | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: ResNet-101 | Column: Active-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: ResNet-101 | Column: Obsolete-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: ResNet-101 | Column: Both† | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: EfficientNet-B0 | Column: Healthy | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: EfficientNet-B0 | Column: Active-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: EfficientNet-B0 | Column: Obsolete-only | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: EfficientNet-B0 | Column: Both† | Reason: ROC-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 16 | Row: YOLOv8s | Column: Active TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 16 | Row: YOLOv8s | Column: Obsolete TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 16 | Row: YOLOv8s | Column: Avg (2 labels) | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 16 | Row: YOLOv8s | Column: Healthy | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 16 | Row: YOLOv8s | Column: Active-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 16 | Row: YOLOv8s | Column: Obsolete-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 16 | Row: YOLOv8s | Column: Both† | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 17 | Row: DenseNet-121 | Column: Healthy | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: DenseNet-121 | Column: Active-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: DenseNet-121 | Column: Obsolete-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: DenseNet-121 | Column: Both† | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: ResNet-101 | Column: Healthy | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: ResNet-101 | Column: Active-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: ResNet-101 | Column: Obsolete-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: ResNet-101 | Column: Both† | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: EfficientNet-B0 | Column: Healthy | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: EfficientNet-B0 | Column: Active-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: EfficientNet-B0 | Column: Obsolete-only | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: EfficientNet-B0 | Column: Both† | Reason: PR-AUC is mathematically defined for binary per-label evaluation only; derived columns are N/A
+Table: Table 17 | Row: YOLOv8s | Column: Active TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 17 | Row: YOLOv8s | Column: Obsolete TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 17 | Row: YOLOv8s | Column: Avg (2 labels) | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 17 | Row: YOLOv8s | Column: Healthy | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 17 | Row: YOLOv8s | Column: Active-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 17 | Row: YOLOv8s | Column: Obsolete-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 17 | Row: YOLOv8s | Column: Both† | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 18 | Row: YOLOv8s | Column: Active TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 18 | Row: YOLOv8s | Column: Obsolete TB | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 18 | Row: YOLOv8s | Column: Avg (2 labels) | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 18 | Row: YOLOv8s | Column: Healthy | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 18 | Row: YOLOv8s | Column: Active-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 18 | Row: YOLOv8s | Column: Obsolete-only | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 18 | Row: YOLOv8s | Column: Both† | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 19 | Row: YOLOv8s | Column: Exact-match acc. | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 19 | Row: YOLOv8s | Column: Hamming acc. | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 19 | Row: YOLOv8s | Column: Macro-F1 | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 19 | Row: YOLOv8s | Column: Weighted-F1 | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 19 | Row: YOLOv8s | Column: Category acc. | Reason: YOLO uses its own tuned confidence threshold (0.21); fixed 0.5 not evaluated
+Table: Table 20 | Row: YOLOv8s | Column: Precision | Reason: YOLO uses its own tuned confidence threshold
+Table: Table 20 | Row: YOLOv8s | Column: Recall | Reason: YOLO uses its own tuned confidence threshold
+Table: Table 20 | Row: YOLOv8s | Column: F1 | Reason: YOLO uses its own tuned confidence threshold
+Table: Table 21 | Row: YOLOv8s | Column: ROC-AUC | Reason: YOLO uses its own tuned confidence threshold
+Table: Table 21 | Row: YOLOv8s | Column: PR-AUC | Reason: YOLO uses its own tuned confidence threshold

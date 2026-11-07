@@ -1,0 +1,8 @@
+category,precision,recall,f1_score,support
+Healthy,0.9547,0.9982,0.9760,570
+Active_only,0.7872,0.7708,0.7789,96
+Obsolete_only,0.0000,0.0000,0.0000,22
+Both,0.0000,0.0000,0.0000,2
+Category_Macro_Average,0.4355,0.4423,0.4387,690
+Subset_Exact_Match_Accuracy,0.9319,N/A,N/A,690
+Hamming_Accuracy,0.9536,N/A,N/A,1380

@@ -1,0 +1,149 @@
+{
+  "checkpoint_evaluated": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\CLASSIFICATION\\EfficientNet\\outputs\\train\\last_checkpoint.pth",
+  "checkpoint_metadata": {
+    "epoch": 70,
+    "val_macro_f1": 0.4695652173913043
+  },
+  "classification_metrics": {
+    "classification_summary": {
+      "exact_match_accuracy": 0.9637681159420289,
+      "hamming_loss": 0.03333333333333333,
+      "hamming_accuracy": 0.9666666666666667,
+      "macro_f1": 0.4495412844036697,
+      "weighted_f1": 0.7222138667468792,
+      "category_accuracy": 0.9637681159420289,
+      "total_test_samples": 690,
+      "probability_threshold": 0.5
+    },
+    "per_label_metrics": {
+      "ActiveTuberculosis": {
+        "confusion_matrix": {
+          "tp": 98,
+          "fp": 22,
+          "fn": 0,
+          "tn": 570
+        },
+        "accuracy": 0.9681159420289855,
+        "precision": 0.8166666666666667,
+        "sensitivity_recall": 1.0,
+        "specificity": 0.9628378378378378,
+        "f1_score": 0.8990825688073394,
+        "roc_auc": 0.9798159128516272,
+        "pr_auc": 0.7992895503915352,
+        "support_positives": 98,
+        "support_negatives": 592
+      },
+      "ObsoletePulmonaryTuberculosis": {
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 24,
+          "tn": 666
+        },
+        "accuracy": 0.9652173913043478,
+        "precision": 0.0,
+        "sensitivity_recall": 0.0,
+        "specificity": 1.0,
+        "f1_score": 0.0,
+        "roc_auc": 0.9172297297297297,
+        "pr_auc": 0.22515022249942382,
+        "support_positives": 24,
+        "support_negatives": 666
+      }
+    },
+    "per_category_metrics": {
+      "Healthy": {
+        "precision": 0.9982456140350877,
+        "recall": 0.9982456140350877,
+        "f1_score": 0.9982456140350877,
+        "support": 570
+      },
+      "Active_Only": {
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1_score": 0.8888888888888888,
+        "support": 96
+      },
+      "Obsolete_Only": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 22
+      },
+      "Both": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 2
+      }
+    },
+    "four_category_confusion_matrix": [
+      [
+        569,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        96,
+        0,
+        0
+      ],
+      [
+        1,
+        21,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ]
+    ],
+    "derived_category_names": [
+      "Healthy",
+      "Active_Only",
+      "Obsolete_Only",
+      "Both"
+    ]
+  },
+  "efficiency_metrics": {
+    "model_architecture": "EfficientNet-B0",
+    "total_parameters": 4010110,
+    "trainable_parameters": 4010110,
+    "computational_complexity": {
+      "tool": "thop (ultralytics_thop)",
+      "macs": 2159543296.0,
+      "flops": 4319086592.0,
+      "convention": "1 MAC = 2 floating point operations"
+    },
+    "inference_benchmark": {
+      "single_image": {
+        "batch_size": 1,
+        "input_resolution": "512x512x3",
+        "mean_latency_ms": 14.360469999955967,
+        "std_latency_ms": 1.0629045240180837,
+        "min_latency_ms": 13.378299991018139,
+        "max_latency_ms": 22.387299992260523,
+        "fps": 69.63560384883408,
+        "num_benchmark_runs": 100
+      },
+      "batched": {
+        "batch_size": 4,
+        "mean_batch_latency_ms": 15.029929999873275,
+        "throughput_images_per_sec": 266.13563736050173,
+        "num_benchmark_runs": 100
+      }
+    },
+    "hardware_environment": {
+      "device": "cuda",
+      "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "cuda_available": true,
+      "torch_version": "2.14.1+cu130",
+      "precision_mode": "FP16 Autocast"
+    }
+  }
+}

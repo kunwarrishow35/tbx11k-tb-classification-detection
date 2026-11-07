@@ -1,0 +1,99 @@
+{
+  "experiment_name": "EfficientNet-B0 Multi-Label Chest X-Ray Classification",
+  "architecture": "EfficientNet-B0",
+  "manifest_timestamp_utc": "2026-11-06T10:12:28.957885+00:00",
+  "stop_reason": "max_epochs",
+  "best_epoch": 54,
+  "best_val_macro_f1": 0.4736842105263158,
+  "configuration": {
+    "data_dir": null,
+    "splits_dir": null,
+    "output_dir": null,
+    "epochs": 70,
+    "batch_size": 4,
+    "accum_steps": 1,
+    "lr": 0.00025,
+    "weight_decay": 1e-05,
+    "seed": 42,
+    "num_workers": 2,
+    "augment": "official",
+    "no_cuda": false,
+    "no_amp": false,
+    "smoke_test": false,
+    "resume": null
+  },
+  "events": [],
+  "dataset_hashes_sha256": {
+    "train_csv": "7b039f1172f614fd0326f7a1e63365ad6610baac1f9227b60938093f0f7817fa",
+    "val_csv": "10854bf2318bd7fd56f43c03320f4e6fce5924153d33ee8bfb0f81251e728136",
+    "test_csv": "f6b6e50e9daf70e7e203dd5e76295b196662186a5e111abd1336392815457467"
+  },
+  "environment": {
+    "python_version": "3.11.15 (main, Mar 10 2026, 18:12:25) [MSC v.1944 64 bit (AMD64)]",
+    "pytorch_version": "2.14.1+cu130",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "gpu_vram_gb": 5.99658203125
+  },
+  "deviations_from_official": [
+    {
+      "parameter": "Classification Head",
+      "official": "1000-class Softmax",
+      "implemented": "2-output Linear [Active, Obsolete]",
+      "category": "DATASET"
+    },
+    {
+      "parameter": "Loss Function",
+      "official": "Softmax Cross-Entropy",
+      "implemented": "BCEWithLogitsLoss()",
+      "category": "DATASET"
+    },
+    {
+      "parameter": "Label Smoothing",
+      "official": "0.1",
+      "implemented": "None (undefined for BCE)",
+      "category": "DATASET"
+    },
+    {
+      "parameter": "Input Resolution",
+      "official": "224 x 224",
+      "implemented": "512 x 512",
+      "category": "DATASET"
+    },
+    {
+      "parameter": "Physical Batch Size",
+      "official": "2048",
+      "implemented": "4 (hardware limit)",
+      "category": "SYSTEM"
+    },
+    {
+      "parameter": "Learning Rate",
+      "official": "0.016 (batch 256)",
+      "implemented": "0.00025 (scaled by 4/256)",
+      "category": "SYSTEM"
+    },
+    {
+      "parameter": "Training Length",
+      "official": "~350 epochs",
+      "implemented": "70 epochs",
+      "category": "DATASET"
+    },
+    {
+      "parameter": "Optimizer Class",
+      "official": "TF RMSprop",
+      "implemented": "timm.optim.RMSpropTF",
+      "category": "MATCHES"
+    }
+  ],
+  "unverified_declarations": [
+    "RMSpropTF is not bit-identical to TF1.",
+    "torchvision init and stochastic-depth scaling are not verified line by line.",
+    "The official main.py snapshot may be older than the live repo.",
+    "The batch-4 LR comes from the scaling rule, not from an official run.",
+    "BatchNorm is noisy at batch 4.",
+    "The crop (0.08 area) can cut small lesions.",
+    "TF crop internals come from documented TF op behavior.",
+    "Label smoothing is omitted.",
+    "Model selection and 70 epochs are project choices."
+  ]
+}

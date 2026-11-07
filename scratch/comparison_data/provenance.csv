@@ -1,0 +1,558 @@
+table_id,row,column,value,source_file,key_or_formula
+Table 1,DenseNet-121,Architecture,DenseNet-121 (Torchvision variant),CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Weights,From scratch (pretrained=False),CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Input Size,"512 x 512, 3 channels (RGB)",CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Optimizer / LR,"SGD (lr=0.01, momentum=0.9, weight_decay=0.0001, nesterov=True)",CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,LR Schedule,"StepLR (step_size=30, gamma=0.1)",CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Batch,4,CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Epochs,70,CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Augmentation,None,CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Normalization,"ImageNet (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Loss,BCEWithLogitsLoss(),CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Checkpoint Selection,Best validation macro-F1 at threshold 0.5,CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Threshold Protocol,"Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking",CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,DenseNet-121,Recipe,Project protocol (not the official DenseNet recipe),CLASSIFICATION/DensNet-121/outputs/train/best_model.pth,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Architecture,ResNet-101 (Torchvision ResNet V1.5 variant),CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Weights,From scratch (pretrained=False),CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Input Size,"512 x 512, 3 channels (RGB)",CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Optimizer / LR,"SGD (lr=0.01, momentum=0.9, weight_decay=0.0001, nesterov=False)",CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,LR Schedule,"StepLR (step_size=30, gamma=0.1)",CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Batch,4,CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Epochs,"70 configured; stopped at epoch 60 (early stopping, patience 20); best epoch 40",CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Augmentation,None,CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Normalization,"None (scaled to [0.0, 1.0] via ToTensor())",CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Loss,BCEWithLogitsLoss(),CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Checkpoint Selection,Best validation macro-F1 at threshold 0.5,CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Threshold Protocol,"Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking",CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,ResNet-101,Recipe,Project protocol (not the official ResNet recipe),CLASSIFICATION/ResNet-101/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Architecture,EfficientNet-B0 (Torchvision variant),CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Weights,From scratch (pretrained=False),CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Input Size,"512 x 512, 3 channels (RGB)",CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Optimizer / LR,"timm.optim.RMSpropTF (lr=0.00025, alpha=0.9, momentum=0.9, eps=0.001, weight_decay=1e-5)",CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,LR Schedule,"Staircase exponential decay (warmup 5 ep, decay every 2.4 ep at 0.97)",CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Batch,4,CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Epochs,70,CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Augmentation,"Inception crop (area 0.08-1.0), Bicubic resize(512,512), RandomHorizontalFlip(0.5)",CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Normalization,"ImageNet (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Loss,BCEWithLogitsLoss(),CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Checkpoint Selection,Best validation macro-F1 (EMA weights) at threshold 0.5,CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Threshold Protocol,"Validation sweep (0.01 to 0.95 in 0.01 steps), median tie-breaking",CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,EfficientNet-B0,Recipe,Official EfficientNet recipe with dataset- and hardware-related changes,CLASSIFICATION/EfficientNet/config.json,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Architecture,YOLOv8s (Ultralytics variant),yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Weights,From scratch (pretrained=False),yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Input Size,"512 x 512, 3 channels (RGB)",yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Optimizer / LR,"auto (SGD / lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005)",yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,LR Schedule,"Linear decay (lr0 to lr0*lrf, warmup 3 ep)",yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Batch,4,yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Epochs,70,yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Augmentation,"mosaic=1.0, erasing=0.4, fliplr=0.5, translate=0.1, scale=0.5, hsv (auto_augment=randaugment)",yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Normalization,"None (scaled to [0.0, 1.0])",yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Loss,"YOLOv8 detection loss (box=7.5, cls=0.5, dfl=1.5)",yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Checkpoint Selection,Best validation detection fitness (mAP50 * 0.1 + mAP50-95 * 0.9),yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Threshold Protocol,"Validation F1 sweep on bounding boxes (0.01 to 0.95 in 0.01 steps), IoU threshold 0.5",yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 1,YOLOv8s,Recipe,"Ultralytics default recipe, trained from scratch",yolo/runs/baseline_yolov8s_scratch/args.yaml,Configuration dictionary / YAML specification
+Table 2,DenseNet-121,Active TB,0.804,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,DenseNet-121,Obsolete TB,0.143,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,DenseNet-121,Avg (2 labels),0.473,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,DenseNet-121,Healthy,0.986,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,DenseNet-121,Active-only,0.782,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,DenseNet-121,Obsolete-only,0.111,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,DenseNet-121,Both†,0.000,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,ResNet-101,Active TB,0.754,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,ResNet-101,Obsolete TB,0.186,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,ResNet-101,Avg (2 labels),0.470,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,ResNet-101,Healthy,0.996,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,ResNet-101,Active-only,0.629,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,ResNet-101,Obsolete-only,0.000,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,ResNet-101,Both†,0.021,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,EfficientNet-B0,Active TB,0.766,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,EfficientNet-B0,Obsolete TB,0.179,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,EfficientNet-B0,Avg (2 labels),0.473,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,EfficientNet-B0,Healthy,0.998,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,EfficientNet-B0,Active-only,0.091,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,EfficientNet-B0,Obsolete-only,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,EfficientNet-B0,Both†,0.017,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 2,YOLOv8s,Active TB,0.809,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 2,YOLOv8s,Obsolete TB,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 2,YOLOv8s,Avg (2 labels),0.404,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 2,YOLOv8s,Healthy,0.955,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 2,YOLOv8s,Active-only,0.787,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 2,YOLOv8s,Obsolete-only,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 2,YOLOv8s,Both†,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 3,DenseNet-121,Active TB,0.796,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,DenseNet-121,Obsolete TB,0.167,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,DenseNet-121,Avg (2 labels),0.481,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,DenseNet-121,Healthy,0.995,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,DenseNet-121,Active-only,0.708,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,DenseNet-121,Obsolete-only,0.091,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,DenseNet-121,Both†,0.000,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,ResNet-101,Active TB,1.000,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,ResNet-101,Obsolete TB,0.750,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,ResNet-101,Avg (2 labels),0.875,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,ResNet-101,Healthy,0.975,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,ResNet-101,Active-only,0.229,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,ResNet-101,Obsolete-only,0.000,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,ResNet-101,Both†,1.000,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,EfficientNet-B0,Active TB,1.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,EfficientNet-B0,Obsolete TB,0.875,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,EfficientNet-B0,Avg (2 labels),0.938,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,EfficientNet-B0,Healthy,0.984,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,EfficientNet-B0,Active-only,0.010,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,EfficientNet-B0,Obsolete-only,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,EfficientNet-B0,Both†,1.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 3,YOLOv8s,Active TB,0.776,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 3,YOLOv8s,Obsolete TB,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 3,YOLOv8s,Avg (2 labels),0.388,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 3,YOLOv8s,Healthy,0.998,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 3,YOLOv8s,Active-only,0.771,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 3,YOLOv8s,Obsolete-only,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 3,YOLOv8s,Both†,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 4,DenseNet-121,Active TB,0.968,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,DenseNet-121,Obsolete TB,0.964,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,DenseNet-121,Avg (2 labels),0.966,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,DenseNet-121,Healthy,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,DenseNet-121,Active-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,DenseNet-121,Obsolete-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,DenseNet-121,Both†,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,ResNet-101,Active TB,0.946,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,ResNet-101,Obsolete TB,0.881,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,ResNet-101,Avg (2 labels),0.914,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,ResNet-101,Healthy,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,ResNet-101,Active-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,ResNet-101,Obsolete-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,ResNet-101,Both†,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,EfficientNet-B0,Active TB,0.949,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,EfficientNet-B0,Obsolete TB,0.856,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,EfficientNet-B0,Avg (2 labels),0.903,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,EfficientNet-B0,Healthy,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,EfficientNet-B0,Active-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,EfficientNet-B0,Obsolete-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,EfficientNet-B0,Both†,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 4,YOLOv8s,Active TB,0.970,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 4,YOLOv8s,Obsolete TB,1.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 4,YOLOv8s,Avg (2 labels),0.985,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 4,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 4,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 4,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 4,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 5,DenseNet-121,Active TB,0.800,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,DenseNet-121,Obsolete TB,0.154,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,DenseNet-121,Avg (2 labels),0.477,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,DenseNet-121,Healthy,0.990,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,DenseNet-121,Active-only,0.743,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,DenseNet-121,Obsolete-only,0.100,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,DenseNet-121,Both†,0.000,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,ResNet-101,Active TB,0.860,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,ResNet-101,Obsolete TB,0.298,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,ResNet-101,Avg (2 labels),0.579,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,ResNet-101,Healthy,0.986,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,ResNet-101,Active-only,0.336,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,ResNet-101,Obsolete-only,0.000,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,ResNet-101,Both†,0.041,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,EfficientNet-B0,Active TB,0.867,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,EfficientNet-B0,Obsolete TB,0.298,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,EfficientNet-B0,Avg (2 labels),0.583,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,EfficientNet-B0,Healthy,0.991,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,EfficientNet-B0,Active-only,0.019,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,EfficientNet-B0,Obsolete-only,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,EfficientNet-B0,Both†,0.034,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 5,YOLOv8s,Active TB,0.792,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 5,YOLOv8s,Obsolete TB,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 5,YOLOv8s,Avg (2 labels),0.396,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 5,YOLOv8s,Healthy,0.976,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 5,YOLOv8s,Active-only,0.779,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 5,YOLOv8s,Obsolete-only,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 5,YOLOv8s,Both†,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 6,DenseNet-121,Active TB,0.981,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,DenseNet-121,Obsolete TB,0.929,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,DenseNet-121,Avg (2 labels),0.955,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,DenseNet-121,Healthy,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,DenseNet-121,Active-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,DenseNet-121,Obsolete-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,DenseNet-121,Both†,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,ResNet-101,Active TB,0.986,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,ResNet-101,Obsolete TB,0.863,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,ResNet-101,Avg (2 labels),0.924,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,ResNet-101,Healthy,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,ResNet-101,Active-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,ResNet-101,Obsolete-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,ResNet-101,Both†,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,EfficientNet-B0,Active TB,0.981,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,EfficientNet-B0,Obsolete TB,0.922,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,EfficientNet-B0,Avg (2 labels),0.952,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,EfficientNet-B0,Healthy,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,EfficientNet-B0,Active-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,EfficientNet-B0,Obsolete-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,EfficientNet-B0,Both†,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 6,YOLOv8s,Active TB,0.972,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 6,YOLOv8s,Obsolete TB,0.815,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 6,YOLOv8s,Avg (2 labels),0.893,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 6,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 6,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 6,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 6,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 7,DenseNet-121,Active TB,0.855,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,DenseNet-121,Obsolete TB,0.208,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,DenseNet-121,Avg (2 labels),0.531,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,DenseNet-121,Healthy,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,DenseNet-121,Active-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,DenseNet-121,Obsolete-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,DenseNet-121,Both†,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,ResNet-101,Active TB,0.861,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,ResNet-101,Obsolete TB,0.273,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,ResNet-101,Avg (2 labels),0.567,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,ResNet-101,Healthy,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,ResNet-101,Active-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,ResNet-101,Obsolete-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,ResNet-101,Both†,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,EfficientNet-B0,Active TB,0.794,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,EfficientNet-B0,Obsolete TB,0.197,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,EfficientNet-B0,Avg (2 labels),0.496,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,EfficientNet-B0,Healthy,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,EfficientNet-B0,Active-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,EfficientNet-B0,Obsolete-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,EfficientNet-B0,Both†,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 7,YOLOv8s,Active TB,0.836,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 7,YOLOv8s,Obsolete TB,0.224,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 7,YOLOv8s,Avg (2 labels),0.530,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 7,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 7,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 7,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 7,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 8,DenseNet-121,Active TB,98,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,DenseNet-121,Obsolete TB,24,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,DenseNet-121,Avg (2 labels),61.0,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,DenseNet-121,Healthy,570,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,DenseNet-121,Active-only,96,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,DenseNet-121,Obsolete-only,22,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,DenseNet-121,Both†,2,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,ResNet-101,Active TB,98,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,ResNet-101,Obsolete TB,24,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,ResNet-101,Avg (2 labels),61.0,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,ResNet-101,Healthy,570,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,ResNet-101,Active-only,96,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,ResNet-101,Obsolete-only,22,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,ResNet-101,Both†,2,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,EfficientNet-B0,Active TB,98,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,EfficientNet-B0,Obsolete TB,24,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,EfficientNet-B0,Avg (2 labels),61.0,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,EfficientNet-B0,Healthy,570,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,EfficientNet-B0,Active-only,96,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,EfficientNet-B0,Obsolete-only,22,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,EfficientNet-B0,Both†,2,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 8,YOLOv8s,Active TB,98,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 8,YOLOv8s,Obsolete TB,24,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 8,YOLOv8s,Avg (2 labels),61.0,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 8,YOLOv8s,Healthy,570,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 8,YOLOv8s,Active-only,96,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 8,YOLOv8s,Obsolete-only,22,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 8,YOLOv8s,Both†,2,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 9,DenseNet-121,Exact-match acc.,0.923,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,DenseNet-121,Hamming acc.,0.940,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,DenseNet-121,Macro-F1,0.477,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,DenseNet-121,Weighted-F1,0.673,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,DenseNet-121,Category acc.,0.923,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,ResNet-101,Exact-match acc.,0.841,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,ResNet-101,Hamming acc.,0.915,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,ResNet-101,Macro-F1,0.579,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,ResNet-101,Weighted-F1,0.749,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,ResNet-101,Category acc.,0.841,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,EfficientNet-B0,Exact-match acc.,0.817,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,EfficientNet-B0,Hamming acc.,0.907,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,EfficientNet-B0,Macro-F1,0.583,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,EfficientNet-B0,Weighted-F1,0.755,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,EfficientNet-B0,Category acc.,0.817,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 9,YOLOv8s,Exact-match acc.,0.932,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 9,YOLOv8s,Hamming acc.,0.954,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 9,YOLOv8s,Macro-F1,0.396,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 9,YOLOv8s,Weighted-F1,0.636,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 9,YOLOv8s,Category acc.,0.932,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 10,DenseNet-121,Precision,0.974,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,DenseNet-121,Recall,0.933,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,DenseNet-121,F1,0.953,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,ResNet-101,Precision,0.894,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,ResNet-101,Recall,0.983,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,ResNet-101,F1,0.937,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,EfficientNet-B0,Precision,0.930,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,EfficientNet-B0,Recall,0.992,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,EfficientNet-B0,F1,0.960,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,YOLOv8s,Precision,0.989,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,YOLOv8s,Recall,0.775,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 10,YOLOv8s,F1,0.869,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 11,DenseNet-121,ROC-AUC,0.555,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 11,DenseNet-121,PR-AUC,0.221,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 11,ResNet-101,ROC-AUC,0.569,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 11,ResNet-101,PR-AUC,0.291,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 11,EfficientNet-B0,ROC-AUC,0.471,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 11,EfficientNet-B0,PR-AUC,0.199,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 11,YOLOv8s,ROC-AUC,0.587,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 11,YOLOv8s,PR-AUC,0.273,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 12,DenseNet-121,Active TB,0.822,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,DenseNet-121,Obsolete TB,0.235,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,DenseNet-121,Avg (2 labels),0.529,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,DenseNet-121,Healthy,0.971,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,DenseNet-121,Active-only,0.807,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,DenseNet-121,Obsolete-only,0.200,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,DenseNet-121,Both†,0.000,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,ResNet-101,Active TB,0.810,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,ResNet-101,Obsolete TB,0.269,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,ResNet-101,Avg (2 labels),0.540,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,ResNet-101,Healthy,0.983,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,ResNet-101,Active-only,0.826,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,ResNet-101,Obsolete-only,0.083,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,ResNet-101,Both†,0.000,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,EfficientNet-B0,Active TB,0.815,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,EfficientNet-B0,Obsolete TB,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,EfficientNet-B0,Avg (2 labels),0.408,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,EfficientNet-B0,Healthy,0.995,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,EfficientNet-B0,Active-only,0.798,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,EfficientNet-B0,Obsolete-only,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,EfficientNet-B0,Both†,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Precision computation on predictions at threshold
+Table 12,YOLOv8s,Active TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 12,YOLOv8s,Obsolete TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 12,YOLOv8s,Avg (2 labels),—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 12,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 12,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 12,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 12,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Precision computation on predictions at threshold
+Table 13,DenseNet-121,Active TB,0.755,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,DenseNet-121,Obsolete TB,0.167,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,DenseNet-121,Avg (2 labels),0.461,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,DenseNet-121,Healthy,0.996,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,DenseNet-121,Active-only,0.740,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,DenseNet-121,Obsolete-only,0.136,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,DenseNet-121,Both†,0.000,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,ResNet-101,Active TB,0.827,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,ResNet-101,Obsolete TB,0.292,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,ResNet-101,Avg (2 labels),0.559,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,ResNet-101,Healthy,0.996,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,ResNet-101,Active-only,0.740,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,ResNet-101,Obsolete-only,0.045,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,ResNet-101,Both†,0.000,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,EfficientNet-B0,Active TB,0.990,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,EfficientNet-B0,Obsolete TB,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,EfficientNet-B0,Avg (2 labels),0.495,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,EfficientNet-B0,Healthy,0.996,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,EfficientNet-B0,Active-only,0.990,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,EfficientNet-B0,Obsolete-only,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,EfficientNet-B0,Both†,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Recall computation on predictions at threshold
+Table 13,YOLOv8s,Active TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 13,YOLOv8s,Obsolete TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 13,YOLOv8s,Avg (2 labels),—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 13,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 13,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 13,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 13,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Recall computation on predictions at threshold
+Table 14,DenseNet-121,Active TB,0.973,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,DenseNet-121,Obsolete TB,0.980,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,DenseNet-121,Avg (2 labels),0.977,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,DenseNet-121,Healthy,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,DenseNet-121,Active-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,DenseNet-121,Obsolete-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,DenseNet-121,Both†,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,ResNet-101,Active TB,0.968,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,ResNet-101,Obsolete TB,0.971,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,ResNet-101,Avg (2 labels),0.970,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,ResNet-101,Healthy,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,ResNet-101,Active-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,ResNet-101,Obsolete-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,ResNet-101,Both†,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,EfficientNet-B0,Active TB,0.963,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,EfficientNet-B0,Obsolete TB,1.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,EfficientNet-B0,Avg (2 labels),0.981,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,EfficientNet-B0,Healthy,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,EfficientNet-B0,Active-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,EfficientNet-B0,Obsolete-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,EfficientNet-B0,Both†,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Specificity computation on predictions at threshold
+Table 14,YOLOv8s,Active TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 14,YOLOv8s,Obsolete TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 14,YOLOv8s,Avg (2 labels),—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 14,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 14,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 14,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 14,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Specificity computation on predictions at threshold
+Table 15,DenseNet-121,Active TB,0.787,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,DenseNet-121,Obsolete TB,0.195,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,DenseNet-121,Avg (2 labels),0.491,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,DenseNet-121,Healthy,0.984,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,DenseNet-121,Active-only,0.772,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,DenseNet-121,Obsolete-only,0.162,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,DenseNet-121,Both†,0.000,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,ResNet-101,Active TB,0.818,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,ResNet-101,Obsolete TB,0.280,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,ResNet-101,Avg (2 labels),0.549,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,ResNet-101,Healthy,0.990,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,ResNet-101,Active-only,0.780,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,ResNet-101,Obsolete-only,0.059,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,ResNet-101,Both†,0.000,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,EfficientNet-B0,Active TB,0.894,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,EfficientNet-B0,Obsolete TB,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,EfficientNet-B0,Avg (2 labels),0.447,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,EfficientNet-B0,Healthy,0.996,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,EfficientNet-B0,Active-only,0.884,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,EfficientNet-B0,Obsolete-only,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,EfficientNet-B0,Both†,0.000,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,F1 computation on predictions at threshold
+Table 15,YOLOv8s,Active TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 15,YOLOv8s,Obsolete TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 15,YOLOv8s,Avg (2 labels),—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 15,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 15,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 15,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 15,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,F1 computation on predictions at threshold
+Table 16,DenseNet-121,Active TB,0.981,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,DenseNet-121,Obsolete TB,0.929,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,DenseNet-121,Avg (2 labels),0.955,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,DenseNet-121,Healthy,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,DenseNet-121,Active-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,DenseNet-121,Obsolete-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,DenseNet-121,Both†,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,ResNet-101,Active TB,0.986,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,ResNet-101,Obsolete TB,0.863,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,ResNet-101,Avg (2 labels),0.924,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,ResNet-101,Healthy,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,ResNet-101,Active-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,ResNet-101,Obsolete-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,ResNet-101,Both†,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,EfficientNet-B0,Active TB,0.981,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,EfficientNet-B0,Obsolete TB,0.922,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,EfficientNet-B0,Avg (2 labels),0.952,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,EfficientNet-B0,Healthy,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,EfficientNet-B0,Active-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,EfficientNet-B0,Obsolete-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,EfficientNet-B0,Both†,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,ROC-AUC computation on predictions at threshold
+Table 16,YOLOv8s,Active TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 16,YOLOv8s,Obsolete TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 16,YOLOv8s,Avg (2 labels),—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 16,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 16,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 16,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 16,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,ROC-AUC computation on predictions at threshold
+Table 17,DenseNet-121,Active TB,0.855,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,DenseNet-121,Obsolete TB,0.208,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,DenseNet-121,Avg (2 labels),0.531,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,DenseNet-121,Healthy,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,DenseNet-121,Active-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,DenseNet-121,Obsolete-only,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,DenseNet-121,Both†,—,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,ResNet-101,Active TB,0.861,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,ResNet-101,Obsolete TB,0.273,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,ResNet-101,Avg (2 labels),0.567,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,ResNet-101,Healthy,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,ResNet-101,Active-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,ResNet-101,Obsolete-only,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,ResNet-101,Both†,—,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,EfficientNet-B0,Active TB,0.794,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,EfficientNet-B0,Obsolete TB,0.197,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,EfficientNet-B0,Avg (2 labels),0.496,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,EfficientNet-B0,Healthy,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,EfficientNet-B0,Active-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,EfficientNet-B0,Obsolete-only,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,EfficientNet-B0,Both†,—,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,PR-AUC computation on predictions at threshold
+Table 17,YOLOv8s,Active TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 17,YOLOv8s,Obsolete TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 17,YOLOv8s,Avg (2 labels),—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 17,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 17,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 17,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 17,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,PR-AUC computation on predictions at threshold
+Table 18,DenseNet-121,Active TB,98,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,DenseNet-121,Obsolete TB,24,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,DenseNet-121,Avg (2 labels),61.0,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,DenseNet-121,Healthy,570,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,DenseNet-121,Active-only,96,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,DenseNet-121,Obsolete-only,22,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,DenseNet-121,Both†,2,CLASSIFICATION/DensNet-121/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,ResNet-101,Active TB,98,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,ResNet-101,Obsolete TB,24,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,ResNet-101,Avg (2 labels),61.0,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,ResNet-101,Healthy,570,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,ResNet-101,Active-only,96,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,ResNet-101,Obsolete-only,22,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,ResNet-101,Both†,2,CLASSIFICATION/ResNet-101/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,EfficientNet-B0,Active TB,98,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,EfficientNet-B0,Obsolete TB,24,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,EfficientNet-B0,Avg (2 labels),61.0,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,EfficientNet-B0,Healthy,570,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,EfficientNet-B0,Active-only,96,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,EfficientNet-B0,Obsolete-only,22,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,EfficientNet-B0,Both†,2,CLASSIFICATION/EfficientNet/outputs/test/per_image_predictions.csv,Support computation on predictions at threshold
+Table 18,YOLOv8s,Active TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 18,YOLOv8s,Obsolete TB,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 18,YOLOv8s,Avg (2 labels),—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 18,YOLOv8s,Healthy,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 18,YOLOv8s,Active-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 18,YOLOv8s,Obsolete-only,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 18,YOLOv8s,Both†,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Support computation on predictions at threshold
+Table 19,DenseNet-121,Exact-match acc.,0.930,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,DenseNet-121,Hamming acc.,0.947,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,DenseNet-121,Macro-F1,0.491,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,DenseNet-121,Weighted-F1,0.671,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,DenseNet-121,Category acc.,0.930,CLASSIFICATION/DensNet-121/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,ResNet-101,Exact-match acc.,0.928,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,ResNet-101,Hamming acc.,0.948,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,ResNet-101,Macro-F1,0.549,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,ResNet-101,Weighted-F1,0.712,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,ResNet-101,Category acc.,0.928,CLASSIFICATION/ResNet-101/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,EfficientNet-B0,Exact-match acc.,0.961,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,EfficientNet-B0,Hamming acc.,0.966,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,EfficientNet-B0,Macro-F1,0.447,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,EfficientNet-B0,Weighted-F1,0.718,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,EfficientNet-B0,Category acc.,0.961,CLASSIFICATION/EfficientNet/outputs/test/threshold_comparison.csv,Overall multi-label summary evaluation formulas
+Table 19,YOLOv8s,Exact-match acc.,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 19,YOLOv8s,Hamming acc.,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 19,YOLOv8s,Macro-F1,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 19,YOLOv8s,Weighted-F1,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 19,YOLOv8s,Category acc.,—,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,Overall multi-label summary evaluation formulas
+Table 20,DenseNet-121,Precision,0.981,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,DenseNet-121,Recall,0.858,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,DenseNet-121,F1,0.916,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,ResNet-101,Precision,0.982,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,ResNet-101,Recall,0.917,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,ResNet-101,F1,0.948,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,EfficientNet-B0,Precision,0.983,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,EfficientNet-B0,Recall,0.975,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,EfficientNet-B0,F1,0.979,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,YOLOv8s,Precision,—,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,YOLOv8s,Recall,—,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 20,YOLOv8s,F1,—,per_image_predictions.csv,Binary Any TB vs Healthy: positive if either label predicted; ground truth positive if either label positive
+Table 21,DenseNet-121,ROC-AUC,0.555,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 21,DenseNet-121,PR-AUC,0.221,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 21,ResNet-101,ROC-AUC,0.569,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 21,ResNet-101,PR-AUC,0.291,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 21,EfficientNet-B0,ROC-AUC,0.471,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 21,EfficientNet-B0,PR-AUC,0.199,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 21,YOLOv8s,ROC-AUC,—,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 21,YOLOv8s,PR-AUC,—,per_image_predictions.csv,"ROC-AUC and PR-AUC restricted strictly to test images with at least one positive label (n=120, target=Obsolete TB)"
+Table 22,Active TB,Precision,0.568,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,Recall,0.643,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,F1,0.603,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,TP,92,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,FP,70,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,FN,51,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,GT boxes,143,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,Pred boxes,162,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,AP50 / mAP50,0.622,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,AP75 / mAP75,0.218,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Active TB,AP50-95 / mAP50-95,0.287,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,Precision,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,Recall,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,F1,0.000,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,TP,0,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,FP,0,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,FN,36,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,GT boxes,36,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,Pred boxes,0,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,AP50 / mAP50,0.140,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,AP75 / mAP75,0.036,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,Obsolete TB,AP50-95 / mAP50-95,0.047,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.per_class & ultralytics_map_metrics
+Table 22,All classes,Precision,0.284,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,Recall,0.322,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,F1,0.302,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,TP,92,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,FP,70,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,FN,87,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,GT boxes,179,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,Pred boxes,162,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,AP50 / mAP50,0.381,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,AP75 / mAP75,0.127,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics
+Table 22,All classes,AP50-95 / mAP50-95,0.167,yolo/runs/baseline_yolov8s_scratch/evaluation/evaluation_summary.json,detection_metrics.overall_summary & ultralytics_map_metrics

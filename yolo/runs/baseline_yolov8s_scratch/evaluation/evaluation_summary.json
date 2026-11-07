@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "evaluation_timestamp_utc": "2026-11-04T12:26:39.179872+00:00",
+    "model_architecture": "YOLOv8s",
+    "checkpoint_evaluated": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\yolo\\runs\\baseline_yolov8s_scratch\\weights\\best.pt",
+    "target_dataset": "TBX11K",
+    "test_images_count": 690,
+    "test_healthy_count": 570,
+    "test_tb_count": 120,
+    "test_gt_boxes_count": 179
+  },
+  "validation_threshold_optimization": {
+    "optimal_confidence_threshold": 0.21,
+    "iou_matching_threshold": 0.5,
+    "val_macro_f1": 0.3203592814371258,
+    "val_micro_f1": 0.5994397759103641,
+    "val_active_p": 0.6604938271604939,
+    "val_active_r": 0.622093023255814,
+    "val_active_f1": 0.6407185628742516,
+    "val_obsolete_p": 0.0,
+    "val_obsolete_r": 0.0,
+    "val_obsolete_f1": 0.0
+  },
+  "ultralytics_map_metrics": {
+    "map50": 0.3806685547691764,
+    "map75": 0.12689331114376715,
+    "map50_95": 0.1672174943849558,
+    "per_class_ap50": {
+      "ActiveTuberculosis": 0.6217603700144424,
+      "ObsoletePulmonaryTuberculosis": 0.13957673952391036
+    },
+    "per_class_ap75": {
+      "ActiveTuberculosis": 0.21756872607788136,
+      "ObsoletePulmonaryTuberculosis": 0.03621789620965293
+    },
+    "per_class_map50_95": {
+      "ActiveTuberculosis": 0.2874879765573447,
+      "ObsoletePulmonaryTuberculosis": 0.04694701221256698
+    }
+  },
+  "detection_metrics": {
+    "frozen_confidence_threshold": 0.21,
+    "iou_matching_threshold": 0.5,
+    "overall_summary": {
+      "macro_f1": 0.3016393442622951,
+      "macro_precision": 0.2839506172839506,
+      "macro_recall": 0.32167832167832167,
+      "micro_f1": 0.5395894428152492,
+      "micro_precision": 0.5679012345679012,
+      "micro_recall": 0.5139664804469274,
+      "total_true_positives": 92,
+      "total_false_positives": 70,
+      "total_false_negatives": 87
+    },
+    "per_class": {
+      "ActiveTuberculosis": {
+        "class_id": 0,
+        "true_positives": 92,
+        "false_positives": 70,
+        "false_negatives": 51,
+        "precision": 0.5679012345679012,
+        "recall": 0.6433566433566433,
+        "f1_score": 0.6032786885245902,
+        "total_gt_boxes": 143,
+        "total_pred_boxes": 162
+      },
+      "ObsoletePulmonaryTuberculosis": {
+        "class_id": 1,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 36,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "total_gt_boxes": 36,
+        "total_pred_boxes": 0
+      }
+    },
+    "confusion_matrix_3x3": [
+      [
+        92,
+        0,
+        51
+      ],
+      [
+        0,
+        0,
+        36
+      ],
+      [
+        70,
+        0,
+        0
+      ]
+    ]
+  },
+  "image_level_classification": {
+    "exact_match_accuracy": 0.9318840579710145,
+    "hamming_loss": 0.0463768115942029,
+    "hamming_accuracy": 0.9536231884057971,
+    "category_accuracy": 0.9318840579710145,
+    "category_macro_f1": 0.43873341157353074,
+    "category_weighted_f1": 0.914624819936335,
+    "per_label": {
+      "ActiveTuberculosis": {
+        "support_positives": 98,
+        "support_negatives": 592,
+        "roc_auc": 0.9719387755102041,
+        "pr_auc": 0.8361580397246352,
+        "precision": 0.8085106382978723,
+        "sensitivity_recall": 0.7755102040816326,
+        "specificity": 0.9695945945945946,
+        "f1_score": 0.7916666666666665,
+        "confusion_matrix": {
+          "tp": 76,
+          "fp": 18,
+          "fn": 22,
+          "tn": 574
+        }
+      },
+      "ObsoletePulmonaryTuberculosis": {
+        "support_positives": 24,
+        "support_negatives": 666,
+        "roc_auc": 0.8146584084084084,
+        "pr_auc": 0.22936678870292015,
+        "precision": 0.0,
+        "sensitivity_recall": 0.0,
+        "specificity": 1.0,
+        "f1_score": 0.0,
+        "confusion_matrix": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 24,
+          "tn": 666
+        }
+      }
+    },
+    "per_category": {
+      "Healthy": {
+        "precision": 0.9546979865771812,
+        "recall": 0.9982456140350877,
+        "f1_score": 0.9759862778730704,
+        "support": 570
+      },
+      "Active_only": {
+        "precision": 0.7872340425531915,
+        "recall": 0.7708333333333334,
+        "f1_score": 0.7789473684210526,
+        "support": 96
+      },
+      "Obsolete_only": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 22
+      },
+      "Both": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "support": 2
+      }
+    },
+    "confusion_matrix_4x4": [
+      [
+        569,
+        1,
+        0,
+        0
+      ],
+      [
+        22,
+        74,
+        0,
+        0
+      ],
+      [
+        5,
+        17,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  "model_complexity": {
+    "architecture": "YOLOv8s",
+    "input_resolution": "512x512x3",
+    "checkpoint_path": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\yolo\\runs\\baseline_yolov8s_scratch\\weights\\best.pt",
+    "checkpoint_file_size_mb": 21.46,
+    "unfused_model": {
+      "layers": 129,
+      "total_parameters": 11136374,
+      "ultralytics_gflops": 28.64
+    },
+    "fused_model": {
+      "layers": 72,
+      "total_parameters": 11126358,
+      "ultralytics_gflops": 28.43,
+      "verification_note": "Matches training log: 11,126,358 parameters and 28.4 GFLOPs"
+    },
+    "thop_profiling": {
+      "tool": "thop",
+      "macs": 9099165696.0,
+      "flops": 18198331392.0,
+      "convention": "1 MAC = 2 floating point operations"
+    },
+    "hardware_device": "cuda:0 (NVIDIA GeForce RTX 4050 Laptop GPU)"
+  },
+  "inference_benchmark": {
+    "hardware_environment": {
+      "device": "cuda:0",
+      "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "cuda_available": true,
+      "torch_version": "2.14.1+cu130",
+      "precision_mode": "FP16 Autocast"
+    },
+    "single_image_benchmark": {
+      "batch_size": 1,
+      "input_resolution": "512x512x3",
+      "mean_latency_ms": 11.33,
+      "median_latency_ms": 11.33,
+      "std_latency_ms": 0.54,
+      "min_latency_ms": 10.45,
+      "max_latency_ms": 12.82,
+      "throughput_fps": 88.23,
+      "timed_iterations": 100,
+      "warmup_iterations": 20,
+      "timing_scope": "PyTorch forward inference pass with CUDA synchronization (excludes disk I/O)"
+    },
+    "batched_benchmark": {
+      "batch_size": 4,
+      "input_resolution": "4x3x512x512",
+      "mean_batch_latency_ms": 11.54,
+      "throughput_images_per_sec": 346.7,
+      "timed_iterations": 50,
+      "warmup_iterations": 10
+    }
+  }
+}

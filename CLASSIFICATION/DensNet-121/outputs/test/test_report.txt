@@ -1,0 +1,77 @@
+==============================================================================
+               DENSENET-121 MULTI-LABEL TEST EVALUATION REPORT                
+==============================================================================
+
+1. EXPERIMENTAL CONFIGURATION & HARDWARE METADATA
+------------------------------------------------------------------------------
+  Model Architecture:        DenseNet-121 (DenseNet-BC-121 equivalent)
+  Pretrained Weights:        None (Trained from scratch)
+  Input Resolution:          512 x 512, 3 channels (RGB)
+  Normalization:             ImageNet Mean [0.485, 0.456, 0.406], Std [0.229, 0.224, 0.225]
+  Target Split:              Canonical test.csv (690 images)
+  Probability Threshold:     0.5
+  Best Checkpoint Loaded:    Epoch 56 (Val Macro-F1: 0.5528846153846153)
+  Evaluation Compute Device: cuda (NVIDIA GeForce RTX 4050 Laptop GPU)
+  Inference Precision:       FP16 Autocast
+  PyTorch Version:           2.14.1+cu130
+
+2. OVERALL CLASSIFICATION PERFORMANCE
+------------------------------------------------------------------------------
+  Subset Exact-Match Acc:    93.04%  (Definition: both binary labels match GT)
+  Hamming Accuracy:          94.71%  (1.0 - Hamming Loss)
+  Hamming Loss:              0.0529  (Fraction of misclassified labels)
+  Macro-F1 (Unweighted):     0.4912  (Arithmetic mean of Active & Obsolete F1)
+  Weighted-F1 (By Support):  0.6708  (Weighted by positive class prevalence)
+  Derived Category Accuracy: 93.04%
+  Total Test Images:         690
+
+3. PER-LABEL CLASSIFICATION METRICS
+------------------------------------------------------------------------------
+  [ActiveTuberculosis]
+    Positive Support:        98 (14.20%)
+    Precision:               0.8222
+    Sensitivity (Recall):    0.7551
+    Specificity:             0.9730
+    F1-Score:                0.7872
+    ROC-AUC:                 0.9810
+    PR-AUC (Avg Precision):  0.8551
+    Confusion Matrix:        TP=74, FP=16, FN=24, TN=576
+
+  [ObsoletePulmonaryTuberculosis]
+    Positive Support:        24 (3.48%)
+    Precision:               0.2353
+    Sensitivity (Recall):    0.1667
+    Specificity:             0.9805
+    F1-Score:                0.1951
+    ROC-AUC:                 0.9290
+    PR-AUC (Avg Precision):  0.2077
+    Confusion Matrix:        TP=4, FP=13, FN=20, TN=653
+
+4. DERIVED FOUR-CATEGORY CLASSIFICATION PERFORMANCE
+------------------------------------------------------------------------------
+  Category         | Precision  | Recall     | F1-Score   | Support 
+  -----------------+------------+------------+------------+---------
+  Healthy          | 0.9709     | 0.9965     | 0.9835     | 570     
+  Active_Only      | 0.8068     | 0.7396     | 0.7717     | 96      
+  Obsolete_Only    | 0.2000     | 0.1364     | 0.1622     | 22      
+  Both             | 0.0000     | 0.0000     | 0.0000     | 2       
+
+5. COMPUTATIONAL EFFICIENCY & INFERENCE BENCHMARKS
+------------------------------------------------------------------------------
+  Total Parameter Count:     6,955,906
+  Trainable Parameters:      6,955,906
+  MACs (Multiply-Accumulate):15.13 GigaMACs (thop (torch-profile))
+  FLOPs:                     30.27 GigaFLOPs (1 MAC = 2 FLOPs)
+  Single-Image Latency (B=1):44.08 ms (+/- 2.15 ms)
+  Single-Image Range:        Min: 40.65 ms, Max: 51.23 ms
+  Single-Image Throughput:   22.68 FPS (frames per second)
+  Batched Throughput (B=4):   91.38 images/sec (43.77 ms per batch)
+
+6. METHODOLOGY & CLINICAL INTERPRETATION NOTES
+------------------------------------------------------------------------------
+  - Multi-label sigmoid threshold fixed at 0.5. No test-set threshold tuning performed.
+  - The 4 categories are strictly derived from independent binary predictions:
+      Healthy=(0,0), Active_Only=(1,0), Obsolete_Only=(0,1), Both=(1,1).
+  - Exact-match requires correctly predicting both disease states simultaneously.
+  - Latency timing employs CUDA synchronization to prevent asynchronous GPU queue bias.
+==============================================================================

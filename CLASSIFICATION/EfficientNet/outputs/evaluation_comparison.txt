@@ -1,0 +1,220 @@
+========================================================================================
+     EFFICIENTNET-B0 EVALUATION COMPARISON: VALIDATION TUNING & TEST BENCHMARK
+========================================================================================
+Model:                  EfficientNet-B0 (trained from scratch, PyTorch torchvision)
+Weights Evaluated:      Exponential Moving Average (EMA) shadow weights
+Checkpoints Evaluated:  1. Best Checkpoint: Epoch 54 (outputs/train/best_model.pth)
+                        2. Last Checkpoint: Epoch 70 (outputs/train/last_checkpoint.pth)
+Evaluation Splits:      Validation (val.csv, N=690) and Test (test.csv, N=690)
+Protocol Statement:     All decision thresholds were selected exclusively on
+                        val.csv via F1 maximization. val_tuned_thresholds.json
+                        was generated and written strictly before test inference.
+File Timestamps:        val_tuned_thresholds.json mtime: 2026-11-06 11:16:49 UTC
+                        test_metrics.json         mtime: 2026-11-06 11:17:16 UTC
+                        (Tuning completed 27.47 seconds prior to test scoring)
+
+----------------------------------------------------------------------------------------
+1. DATASET SPLIT CLASS COUNTS & PREVALENCE
+----------------------------------------------------------------------------------------
+Split  | Total | Healthy | Act-Only | Obs-Only | Both | Active TB (%)  | Obsolete TB (%)
+-------+-------+---------+----------+----------+------+----------------+----------------
+Train  |  3219 |    2660 |      431 |      105 |   23 |  454 (14.10%)   |  128 ( 3.98%)
+Val    |   690 |     570 |      103 |       12 |    5 |  108 (15.65%)   |   17 ( 2.46%)
+Test   |   690 |     570 |       96 |       22 |    2 |   98 (14.20%)   |   24 ( 3.48%)
+
+----------------------------------------------------------------------------------------
+2. VALIDATION THRESHOLD SELECTION (val.csv, N=690)
+----------------------------------------------------------------------------------------
+Selection Rule: Per-label threshold maximizes that label's validation F1, shared
+                threshold maximizes validation macro-F1, ties resolved by the
+                median of tied values, sweep from 0.01 to 0.95 in steps of 0.01.
+
+A. Best Checkpoint (Epoch 54):
+Target         | Pos  | Tuned tau | Tie Set (Median)        | Val Prec | Val Rec | Val F1 | Fallback
+---------------+------+-----------+-------------------------+----------+---------+--------+---------
+Active TB      |  108 | 0.5550    | [0.50, 0.61] (med:0.555)| 0.9000   | 1.0000  | 0.9474 | False   
+Obsolete TB    |   17 | 0.0600    | [0.05, 0.07] (med:0.060)| 0.1322   | 0.9412  | 0.2319 | False   
+Shared (Macro) |  125 | 0.1000    | [0.10] (unique max)     | N/A      | N/A     | 0.5699 | False   
+Fixed tau = 0.50 on val.csv: Active F1 = 0.9474, Obsolete F1 = 0.0000, Macro-F1 = 0.4737
+
+B. Last Checkpoint (Epoch 70):
+Target         | Pos  | Tuned tau | Tie Set (Median)        | Val Prec | Val Rec | Val F1 | Fallback
+---------------+------+-----------+-------------------------+----------+---------+--------+---------
+Active TB      |  108 | 0.6900    | [0.69] (unique max)     | 0.9076   | 1.0000  | 0.9515 | False   
+Obsolete TB    |   17 | 0.0750    | [0.06, 0.09] (med:0.075)| 0.1393   | 1.0000  | 0.2446 | False   
+Shared (Macro) |  125 | 0.0900    | [0.09] (unique max)     | N/A      | N/A     | 0.5667 | False   
+Fixed tau = 0.50 on val.csv: Active F1 = 0.9391, Obsolete F1 = 0.0000, Macro-F1 = 0.4696
+
+----------------------------------------------------------------------------------------
+3. TEST COMPARISON: BEST CHECKPOINT (EPOCH 54, best_model.pth)
+----------------------------------------------------------------------------------------
+Evaluation Metric              | Fixed tau = 0.50 | Shared Val-Tuned | Per-Label Tuned  
+-------------------------------+------------------+------------------+------------------
+Threshold (Active / Obsolete)  | 0.5000 / 0.5000  | 0.1000 / 0.1000  | 0.5550 / 0.0600  
+Macro-F1 Score                 | 0.4470           | 0.5826           | 0.6039           
+Weighted-F1 Score              | 0.7181           | 0.7516           | 0.7849           
+Exact-Match Accuracy           | 96.09          % | 81.74          % | 82.61           %
+Hamming Loss                   | 0.0341           | 0.1007           | 0.0877           
+Active TB Precision            | 0.8151           | 0.7656           | 0.8291           
+Active TB Recall (Sensitivity) | 0.9898           | 1.0000           | 0.9898           
+Active TB F1-Score             | 0.8940           | 0.8673           | 0.9023           
+Active TB Specificity (TNR)    | 0.9628           | 0.9493           | 0.9662           
+Active TB ROC-AUC [rank-free]  | 0.9807           | 0.9807           | 0.9807           
+Active TB PR-AUC  [rank-free]  | 0.7944           | 0.7944           | 0.7944           
+Obsolete TB Precision          | 0.0000           | 0.1795           | 0.1833           
+Obsolete TB Recall (Sensitivity) | 0.0000           | 0.8750           | 0.9167           
+Obsolete TB F1-Score           | 0.0000           | 0.2979           | 0.3056           
+Obsolete TB Specificity (TNR)  | 1.0000           | 0.8559           | 0.8529           
+Obsolete TB ROC-AUC [rnk-free] | 0.9225           | 0.9225           | 0.9225           
+Obsolete TB PR-AUC  [rnk-free] | 0.1972           | 0.1972           | 0.1972           
+Active TB Counts (TP/FP/FN/TN) | 97/22/1/570      | 98/30/0/562      | 97/20/1/572      
+Obsolete TB Counts (TP/FP/FN/TN) | 0/0/24/666       | 21/96/3/570      | 22/98/2/568      
+
+----------------------------------------------------------------------------------------
+4. TEST COMPARISON: LAST CHECKPOINT (EPOCH 70, last_checkpoint.pth)
+----------------------------------------------------------------------------------------
+Evaluation Metric              | Fixed tau = 0.50 | Shared Val-Tuned | Per-Label Tuned  
+-------------------------------+------------------+------------------+------------------
+Threshold (Active / Obsolete)  | 0.5000 / 0.5000  | 0.0900 / 0.0900  | 0.6900 / 0.0750  
+Macro-F1 Score                 | 0.4495           | 0.5692           | 0.6046           
+Weighted-F1 Score              | 0.7222           | 0.7193           | 0.7789           
+Exact-Match Accuracy           | 96.38          % | 79.86          % | 82.75           %
+Hamming Loss                   | 0.0333           | 0.1051           | 0.0884           
+Active TB Precision            | 0.8167           | 0.6901           | 0.8261           
+Active TB Recall (Sensitivity) | 1.0000           | 1.0000           | 0.9694           
+Active TB F1-Score             | 0.8991           | 0.8167           | 0.8920           
+Active TB Specificity (TNR)    | 0.9628           | 0.9257           | 0.9662           
+Active TB ROC-AUC [rank-free]  | 0.9798           | 0.9798           | 0.9798           
+Active TB PR-AUC  [rank-free]  | 0.7993           | 0.7993           | 0.7993           
+Obsolete TB Precision          | 0.0000           | 0.1933           | 0.1901           
+Obsolete TB Recall (Sensitivity) | 0.0000           | 0.9583           | 0.9583           
+Obsolete TB F1-Score           | 0.0000           | 0.3217           | 0.3172           
+Obsolete TB Specificity (TNR)  | 1.0000           | 0.8559           | 0.8529           
+Obsolete TB ROC-AUC [rnk-free] | 0.9172           | 0.9172           | 0.9172           
+Obsolete TB PR-AUC  [rnk-free] | 0.2251           | 0.2251           | 0.2251           
+Active TB Counts (TP/FP/FN/TN) | 98/22/0/570      | 98/44/0/548      | 95/20/3/572      
+Obsolete TB Counts (TP/FP/FN/TN) | 0/0/24/666       | 23/96/1/570      | 23/98/1/568      
+
+----------------------------------------------------------------------------------------
+5. BEST VS LAST CHECKPOINT COMPARISON
+----------------------------------------------------------------------------------------
+Setting              | Metric                 | Best (Epoch 54)   | Last (Epoch 70)   | Delta  
+---------------------+------------------------+-------------------+-------------------+--------
+Val (Governing)      | Validation Macro-F1    | 0.4737            | 0.4696            | -0.0041
+Fixed tau = 0.50     | Test Macro-F1          | 0.4470            | 0.4495            | +0.0025
+Fixed tau = 0.50     | Active TB F1           | 0.8940            | 0.8991            | +0.0051
+Fixed tau = 0.50     | Obsolete TB F1         | 0.0000            | 0.0000            |  0.0000
+Per-Label Val-Tuned  | Test Macro-F1          | 0.6039            | 0.6046            | +0.0007
+Per-Label Val-Tuned  | Active TB F1           | 0.9023            | 0.8920            | -0.0103
+Per-Label Val-Tuned  | Obsolete TB F1         | 0.3056            | 0.3172            | +0.0116
+Per-Label Val-Tuned  | Obsolete TB Recall     | 91.67% (22/24)    | 95.83% (23/24)    | +4.17% 
+Threshold-Free       | Active TB ROC-AUC      | 0.9807            | 0.9798            | -0.0009
+Threshold-Free       | Active TB PR-AUC       | 0.7944            | 0.7993            | +0.0049
+Threshold-Free       | Obsolete TB ROC-AUC    | 0.9225            | 0.9172            | -0.0053
+Threshold-Free       | Obsolete TB PR-AUC     | 0.1972            | 0.2252            | +0.0279
+
+The headline checkpoint is the best one, because it is the one the validation-based
+selection chose, and the last checkpoint is shown only for comparison.
+
+----------------------------------------------------------------------------------------
+6. DERIVED FOUR-CATEGORY CLASSIFICATION (BEST CHECKPOINT, EPOCH 54)
+----------------------------------------------------------------------------------------
+A. Fixed Threshold (tau = 0.50):
+Overall 4-Category Accuracy: 96.09% (663 / 690 correct)
+Category         | Precision  | Recall     | F1-Score   | Support 
+-----------------+------------+------------+------------+---------
+Healthy          | 0.9947     | 0.9965     | 0.9956     | 570     
+Active_Only      | 0.7983     | 0.9896     | 0.8837     | 96      
+Obsolete_Only    | 0.0000     | 0.0000     | 0.0000     | 22      
+Both             | 0.0000     | 0.0000     | 0.0000     | 2       
+
+4x4 Confusion Matrix (Rows=True [H, A, O, B], Columns=Pred [H, A, O, B]):
+  [ [ 568,    2,    0,    0 ],
+    [   1,   95,    0,    0 ],
+    [   2,   20,    0,    0 ],
+    [   0,    2,    0,    0 ] ]
+Predicted category counts: Healthy = 571, Active_Only = 119, Obsolete_Only = 0, Both = 0
+
+B. Shared Validation-Tuned Threshold (tau = 0.1000):
+Overall 4-Category Accuracy: 81.74% (564 / 690 correct)
+Category         | Precision  | Recall     | F1-Score   | Support 
+-----------------+------------+------------+------------+---------
+Healthy          | 0.9982     | 0.9842     | 0.9912     | 570     
+Active_Only      | 0.0909     | 0.0104     | 0.0187     | 96      
+Obsolete_Only    | 0.0000     | 0.0000     | 0.0000     | 22      
+Both             | 0.0171     | 1.0000     | 0.0336     | 2       
+
+4x4 Confusion Matrix (Rows=True [H, A, O, B], Columns=Pred [H, A, O, B]):
+  [ [ 561,    8,    0,    1 ],
+    [   0,    1,    0,   95 ],
+    [   1,    2,    0,   19 ],
+    [   0,    0,    0,    2 ] ]
+Predicted category counts: Healthy = 562, Active_Only = 11, Obsolete_Only = 0, Both = 117
+
+C. Per-Label Validation-Tuned Threshold (tau = [0.5550, 0.0600]):
+Overall 4-Category Accuracy: 82.61% (570 / 690 correct)
+Category         | Precision  | Recall     | F1-Score   | Support 
+-----------------+------------+------------+------------+---------
+Healthy          | 0.9965     | 0.9965     | 0.9965     | 570     
+Active_Only      | 0.0000     | 0.0000     | 0.0000     | 96      
+Obsolete_Only    | 0.0000     | 0.0000     | 0.0000     | 22      
+Both             | 0.0171     | 1.0000     | 0.0336     | 2       
+
+4x4 Confusion Matrix (Rows=True [H, A, O, B], Columns=Pred [H, A, O, B]):
+  [ [ 568,    0,    2,    0 ],
+    [   0,    0,    1,   95 ],
+    [   2,    0,    0,   20 ],
+    [   0,    0,    0,    2 ] ]
+Predicted category counts: Healthy = 570, Active_Only = 0, Obsolete_Only = 3, Both = 117
+
+----------------------------------------------------------------------------------------
+7. COMPUTATIONAL COMPLEXITY & EFFICIENCY BENCHMARKS
+----------------------------------------------------------------------------------------
+Model Architecture:             EfficientNet-B0
+Total Parameters:               4,010,110
+Trainable Parameters:           4,010,110
+Input Resolution:               512x512x3
+FLOPs:                          4.32 GigaFLOPs (4,319,086,592.0 FLOPs)
+MACs:                           2.16 GigaMACs (2,159,543,296.0 MACs)
+FLOPs Convention:               1 MAC = 2 floating point operations (tool: thop (ultralytics_thop))
+Single-Image Latency (B=1):     13.93 +/- 0.27 ms
+Single-Image Latency Range:     Min: 13.43 ms, Max: 14.78 ms
+Single-Image Throughput (B=1):  71.8 frames/sec (FPS)
+Batched Throughput (B=4):       265.4 images/sec (Batch Latency: 15.07 ms)
+Hardware & Precision:           NVIDIA GeForce RTX 4050 Laptop GPU (FP16 Autocast)
+
+----------------------------------------------------------------------------------------
+8. ARTIFACT DIRECTORY FILE INDEX
+----------------------------------------------------------------------------------------
+outputs/train/               : Checkpoint binaries (best_model.pth,
+                               last_checkpoint.pth), training history log,
+                               and loss curves.
+outputs/test/                : Authoritative test bundle at tau=0.50, val
+                               threshold sweep CSV, curves PNG, comparison CSV.
+outputs/test_val_tuned/      : Authoritative 7-file test bundle evaluated at
+                               per-label validation-tuned thresholds.
+outputs/test_last/           : Epoch 70 baseline evaluation bundle at tau=0.50,
+                               val sweep CSV, and comparison CSV.
+outputs/test_last_val_tuned/ : Epoch 70 7-file test bundle evaluated at
+                               per-label validation-tuned thresholds.
+
+----------------------------------------------------------------------------------------
+9. FACTUAL OBSERVATIONS & DATA CHARACTERISTICS
+----------------------------------------------------------------------------------------
+1. Obsolete TB Sample Size: Obsolete Pulmonary Tuberculosis has only 17 validation
+   positives and 24 test positives, which causes empirical threshold sweeps and
+   resulting F1 scores to be sensitive to small shifts in predictions.
+2. Metric Trade-Off: At validation-tuned thresholds, Macro-F1 increases from 0.4470
+   to 0.6039 while subset Exact-Match Accuracy decreases from 96.09% to 82.61%.
+3. Obsolete TB Precision Trade-Off: Lowering the Obsolete threshold from 0.50 to
+   0.0600 increases true positive detections from 0 to 22 (out of 24), but introduces
+   98 false positives, resulting in an Obsolete precision of 0.1833.
+4. Cross-Class Categorical Migration: In the 4-category mapping under tuned
+   thresholds, 117 test images are assigned to 'Both' (95 from true Active_Only,
+   20 from true Obsolete_Only, and 2 from true Both), reflecting simultaneous
+   positive predictions on both output channels.
+5. Metric Invariance: ROC-AUC and PR-AUC values are calculated directly on
+   continuous probabilities and remain strictly invariant across all classification
+   threshold choices (Active ROC-AUC: 0.9807, PR-AUC: 0.7944; Obsolete ROC-AUC: 0.9225,
+   PR-AUC: 0.1972).
+========================================================================================

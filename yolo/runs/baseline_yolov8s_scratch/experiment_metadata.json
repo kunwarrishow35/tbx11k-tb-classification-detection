@@ -1,0 +1,160 @@
+{
+  "experiment_name": "baseline_yolov8s_scratch",
+  "model_architecture": "YOLOv8s Detection (Ultralytics)",
+  "model_yaml": "yolov8s.yaml",
+  "scratch_initialization": {
+    "verified": true,
+    "pretrained": false,
+    "weights_loaded": null,
+    "initialization_method": "Random initialization from yolov8s.yaml architecture",
+    "total_parameters": 11136374,
+    "trainable_parameters": 0
+  },
+  "dataset": {
+    "dataset_yaml": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\yolo\\dataset\\dataset.yaml",
+    "splits_manifests": {
+      "train": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\data_prep\\splits\\train.csv",
+      "val": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\data_prep\\splits\\val.csv",
+      "test": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\data_prep\\splits\\test.csv"
+    },
+    "audit_statistics": {
+      "train": {
+        "images": 3219,
+        "healthy": 2660,
+        "active_only": 431,
+        "obsolete_only": 105,
+        "mixed": 23,
+        "active_boxes": 657,
+        "obsolete_boxes": 180,
+        "total_boxes": 837,
+        "empty_labels": 2660,
+        "invalid_boxes": 0,
+        "missing_images": 0,
+        "missing_xmls": 0
+      },
+      "val": {
+        "images": 690,
+        "healthy": 570,
+        "active_only": 103,
+        "obsolete_only": 12,
+        "mixed": 5,
+        "active_boxes": 172,
+        "obsolete_boxes": 23,
+        "total_boxes": 195,
+        "empty_labels": 570,
+        "invalid_boxes": 0,
+        "missing_images": 0,
+        "missing_xmls": 0
+      },
+      "test": {
+        "images": 690,
+        "healthy": 570,
+        "active_only": 96,
+        "obsolete_only": 22,
+        "mixed": 2,
+        "active_boxes": 143,
+        "obsolete_boxes": 36,
+        "total_boxes": 179,
+        "empty_labels": 570,
+        "invalid_boxes": 0,
+        "missing_images": 0,
+        "missing_xmls": 0
+      }
+    },
+    "classes": {
+      "0": "ActiveTuberculosis",
+      "1": "ObsoletePulmonaryTuberculosis"
+    }
+  },
+  "hyperparameters": {
+    "image_size": 512,
+    "epochs": 70,
+    "batch_size": 4,
+    "workers": 2,
+    "optimizer": "auto",
+    "seed": 42,
+    "amp": true,
+    "patience": 70,
+    "learning_rate_initial": "default (0.01)",
+    "learning_rate_final": "default (0.01)"
+  },
+  "training_arguments": {
+    "data": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\yolo\\dataset\\dataset.yaml",
+    "epochs": 70,
+    "batch": 4,
+    "imgsz": 512,
+    "device": "0",
+    "workers": 2,
+    "optimizer": "auto",
+    "seed": 42,
+    "amp": true,
+    "patience": 70,
+    "project": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\yolo\\runs",
+    "name": "baseline_yolov8s_scratch",
+    "pretrained": false,
+    "val": true,
+    "plots": true,
+    "save": true,
+    "exist_ok": true,
+    "verbose": true
+  },
+  "environment": {
+    "python_version": "3.11.15 (main, Mar 10 2026, 18:12:25) [MSC v.1944 64 bit (AMD64)]",
+    "pytorch_version": "2.14.1+cu130",
+    "cuda_version": "13.0",
+    "ultralytics_version": "8.4.189",
+    "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "os": "nt"
+  },
+  "execution": {
+    "smoke_test": false,
+    "start_time_utc": "2026-11-04T10:45:40.617533+00:00",
+    "end_time_utc": "2026-11-04T12:00:54.904668+00:00",
+    "duration_seconds": 4514.29,
+    "duration_human": "75.24 minutes"
+  },
+  "final_metrics": {
+    "epoch": "70",
+    "time": "4488.92",
+    "train/box_loss": "0.98211",
+    "train/cls_loss": "1.17502",
+    "train/dfl_loss": "1.19531",
+    "metrics/precision(B)": "0.85184",
+    "metrics/recall(B)": "0.28198",
+    "metrics/mAP50(B)": "0.34678",
+    "metrics/mAP50-95(B)": "0.14793",
+    "val/box_loss": "0.32409",
+    "val/cls_loss": "0.44719",
+    "val/dfl_loss": "0.41337",
+    "lr/pg0": "4.02461e-05",
+    "lr/pg1": "4.02461e-05",
+    "lr/pg2": "4.02461e-05"
+  },
+  "generated_artifacts": [
+    "BoxF1_curve.png",
+    "BoxPR_curve.png",
+    "BoxP_curve.png",
+    "BoxR_curve.png",
+    "args.yaml",
+    "confusion_matrix.png",
+    "confusion_matrix_normalized.png",
+    "labels.jpg",
+    "results.csv",
+    "results.png",
+    "train_batch0.jpg",
+    "train_batch1.jpg",
+    "train_batch2.jpg",
+    "train_batch48300.jpg",
+    "train_batch48301.jpg",
+    "train_batch48302.jpg",
+    "val_batch0_labels.jpg",
+    "val_batch0_pred.jpg",
+    "val_batch1_labels.jpg",
+    "val_batch1_pred.jpg",
+    "val_batch2_labels.jpg",
+    "val_batch2_pred.jpg",
+    "weights\\best.pt",
+    "weights\\last.pt"
+  ],
+  "warnings_and_errors": []
+}

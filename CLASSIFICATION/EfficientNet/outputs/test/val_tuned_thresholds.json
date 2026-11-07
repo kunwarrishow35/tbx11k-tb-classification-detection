@@ -1,0 +1,56 @@
+{
+  "timestamp_utc": "2026-11-06T11:16:49.023491+00:00",
+  "threshold_selection_protocol": "Validation F1-maximization (sweep 0.01 to 0.95 in 0.01 steps)",
+  "validation_dataset": "data_prep/splits/val.csv (690 samples)",
+  "per_label": {
+    "ActiveTuberculosis": {
+      "threshold": 0.555,
+      "validation_f1": 0.947368,
+      "validation_precision": 0.9,
+      "validation_recall": 1.0,
+      "validation_specificity": 0.979381,
+      "validation_positives": 108,
+      "tie_set": [
+        0.5,
+        0.51,
+        0.52,
+        0.53,
+        0.54,
+        0.55,
+        0.56,
+        0.57,
+        0.58,
+        0.59,
+        0.6,
+        0.61
+      ],
+      "fallback_to_0.5": false
+    },
+    "ObsoletePulmonaryTuberculosis": {
+      "threshold": 0.06,
+      "validation_f1": 0.231884,
+      "validation_precision": 0.132231,
+      "validation_recall": 0.941176,
+      "validation_specificity": 0.843982,
+      "validation_positives": 17,
+      "tie_set": [
+        0.05,
+        0.06,
+        0.07
+      ],
+      "fallback_to_0.5": false
+    }
+  },
+  "shared_threshold": {
+    "threshold": 0.1,
+    "validation_macro_f1": 0.569869,
+    "tie_set": [
+      0.1
+    ],
+    "fallback_to_0.5": false
+  },
+  "validation_positives_per_label": {
+    "ActiveTuberculosis": 108,
+    "ObsoletePulmonaryTuberculosis": 17
+  }
+}

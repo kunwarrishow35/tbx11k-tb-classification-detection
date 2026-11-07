@@ -1,0 +1,24 @@
+{
+  "architecture": "YOLOv8s",
+  "input_resolution": "512x512x3",
+  "checkpoint_path": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\yolo\\runs\\baseline_yolov8s_scratch\\weights\\best.pt",
+  "checkpoint_file_size_mb": 21.46,
+  "unfused_model": {
+    "layers": 129,
+    "total_parameters": 11136374,
+    "ultralytics_gflops": 28.64
+  },
+  "fused_model": {
+    "layers": 72,
+    "total_parameters": 11126358,
+    "ultralytics_gflops": 28.43,
+    "verification_note": "Matches training log: 11,126,358 parameters and 28.4 GFLOPs"
+  },
+  "thop_profiling": {
+    "tool": "thop",
+    "macs": 9099165696.0,
+    "flops": 18198331392.0,
+    "convention": "1 MAC = 2 floating point operations"
+  },
+  "hardware_device": "cuda:0 (NVIDIA GeForce RTX 4050 Laptop GPU)"
+}

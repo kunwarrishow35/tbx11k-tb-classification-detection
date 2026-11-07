@@ -1,0 +1,9 @@
+# YOLOv8s Dataset Configuration for TBX11K Multi-Label Detection
+path: C:/Users/kunwa/Desktop/IEEE RESEARCH/yolo/dataset
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: ActiveTuberculosis
+  1: ObsoletePulmonaryTuberculosis

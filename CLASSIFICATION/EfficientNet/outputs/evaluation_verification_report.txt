@@ -1,0 +1,89 @@
+========================================================================================
+         EFFICIENTNET-B0 INDEPENDENT EVALUATION VERIFICATION AUDIT REPORT
+========================================================================================
+Audit Scope:            Independent code verification of data handling, threshold
+                        analysis, metric formulas, model loading, and checkpoint
+                        evaluations (epochs 54 & 70).
+Verification Protocol:  Separate independent script using numpy and scikit-learn
+                        directly, without calling test.py functions.
+Strict Tolerance:       1e-9 for mathematical formulas, exact match for discrete
+                        counts and paths, 5e-3 for FP16 inference.
+
+----------------------------------------------------------------------------------------
+1. AUDIT SUMMARY
+----------------------------------------------------------------------------------------
+Total Verification Checks: 20
+Checks Passed:             20
+Checks Failed:             0
+Checks Not Applicable:     0
+Audit Overall Status:      ALL CHECKS PASSED
+
+----------------------------------------------------------------------------------------
+2. COMPREHENSIVE VERIFICATION BATTERY TABLE
+----------------------------------------------------------------------------------------
+ID   | Verification Check Description                   | Result | Max Diff       | Tolerance
+-----+--------------------------------------------------+--------+----------------+---------
+A1   | val_predictions.csv (690 rows, paths/labels)     | PASS   | 0.0            | exact ma
+A2   | per_image_predictions.csv (4 sets, 690 rows)     | PASS   | 0.0            | exact ma
+A3   | Zero image overlap across train/val/test splits  | PASS   | 0.0            | exact ma
+A4   | Probabilities in [0,1], row/label counts match   | PASS   | 0.0            | exact ma
+A5   | Label order [ActiveTuberculosis, Obsolete...]    | PASS   | 0.0            | exact ma
+B1   | Validation 95-step threshold sweep recomputed    | PASS   | 4.829932e-07   | 1e-5    
+B2   | Chosen thresholds, tie sets, median rule         | PASS   | 0.0            | 1e-9    
+B3   | Validation F1 matches sweep and checkpoint F1    | PASS   | 4.210526e-07   | 1e-5    
+B4   | Zero leakage: val_tuned written before test      | PASS   | 0.0            | val writ
+B5   | Validation loader: no aug, no shuffle, bilinear  | PASS   | 0.0            | exact ma
+C1   | Per-label TP/FP/FN/TN, prec, rec, spec, F1       | PASS   | 0.0            | 1e-9    
+C2   | Exact-match accuracy, Hamming loss & accuracy    | PASS   | 0.0            | 1e-9    
+C3   | Macro-F1 (unweighted) and Weighted-F1            | PASS   | 0.0            | 1e-9    
+C4   | Ranking ROC-AUC & PR-AUC threshold-invariant     | PASS   | 0.0            | 1e-9    
+C5   | 4-category mapping, 4x4 matrix, prec, rec, F1    | PASS   | 0.0            | 1e-9    
+C6   | Confusion counts agree across JSON, PNG & CSV    | PASS   | 0.0            | exact ma
+D1   | EMA weights differ from raw weights, epoch 54/70 | PASS   | 1.474054e+00   | state_di
+D2   | Preprocessing metadata matches ImageNet std      | PASS   | 0.0            | exact ma
+D3   | 40-image spot-check inference matches saved CSV  | PASS   | 8.056308e-04   | 5e-3 (FP
+D4   | Parameter count = 4,010,110 and FLOPs = 2 x MACs | PASS   | 0.0            | 1e-5    
+
+----------------------------------------------------------------------------------------
+3. ANOMALIES AND FAILURE INVESTIGATION
+----------------------------------------------------------------------------------------
+No failures or discrepancies were encountered. All 20 formal verification checks passed
+within their defined numerical and exact-match tolerances.
+
+----------------------------------------------------------------------------------------
+4. SECTION E DIAGNOSTICS (INFORMATIONAL / FACTUAL)
+----------------------------------------------------------------------------------------
+Diagnostic ID   | Metric / Evaluation Item             | Measured Value / Breakdown     
+----------------+--------------------------------------+--------------------------------
+E1 (Fixed 0.5)  | Active False Positives Breakdown     | Total: 22 (Obs: 20, Healthy: 2)
+E1 (Tuned)      | Active False Positives Breakdown     | Total: 20 (Obs: 20, Healthy: 0)
+E2 (Tuned)      | Obsolete False Positives Breakdown   | Total: 98 (Act: 96, Healthy: 2)
+E3 (TB-Only)    | Obsolete ROC-AUC in TB Cases (N=120) | 0.471354                       
+E3 (TB-Only)    | Obsolete PR-AUC in TB Cases (N=120)  | 0.198537                       
+E4 (Fixed 0.5)  | Any-TB vs Healthy Precision          | 0.983193 (117 / 119)           
+E4 (Fixed 0.5)  | Any-TB vs Healthy Recall             | 0.975000 (117 / 120)           
+E4 (Fixed 0.5)  | Any-TB vs Healthy F1-Score           | 0.9791 (TP:117 FP:2 FN:3 TN:568)
+E4 (Shared 0.10) | Any-TB vs Healthy Precision          | 0.929688 (119 / 128)           
+E4 (Shared 0.10) | Any-TB vs Healthy Recall             | 0.991667 (119 / 120)           
+E4 (Shared 0.10) | Any-TB vs Healthy F1-Score           | 0.9597 (TP:119 FP:9 FN:1 TN:561)
+E5 (Methodology) | Validation Split Dual-Role Note      | Checkpoint selection & tuning  
+
+Diagnostic E5 Note: The validation split (val.csv) was utilized both for selecting the
+governing checkpoint across epochs 1-70 (best validation macro-F1) and for tuning the
+decision thresholds. This dual usage may impart mild optimistic selection bias on
+validation metrics, though test-set integrity was strictly maintained via zero test-set
+threshold tuning.
+
+----------------------------------------------------------------------------------------
+5. AUDIT CONCLUSION & DATA TRUSTWORTHINESS STATEMENT
+----------------------------------------------------------------------------------------
+All reported metrics, tables, and JSON outputs for the EfficientNet-B0 run are verified
+to be strictly trustworthy, mathematically sound, and reproducible. Data pipelines, split
+partitions, label conventions, and evaluation metrics were computed with 100% fidelity to
+the project standards. The headline checkpoint for all scientific reporting is Epoch 54
+(best_model.pth), as dictated by the validation-based selection protocol. The test set
+numbers at fixed tau = 0.50 provide an authoritative comparison against baseline
+architectures (ResNet-101, DenseNet-121), while the validation-tuned threshold results
+provide calibrated multi-label performance for the imbalanced Obsolete TB class without
+test-set contamination.
+========================================================================================
