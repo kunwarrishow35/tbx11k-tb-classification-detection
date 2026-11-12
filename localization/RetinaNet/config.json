@@ -1,0 +1,175 @@
+{
+  "model_name": "retinanet_resnet50_fpn",
+  "architecture_variant": "v1 (ResNet-50 + FPN, LastLevelP6P7)",
+  "training_regime": "Run A: Strict From-Scratch (no ImageNet pretrained weights)",
+  "script_provenance": "train.py is adapted from the official script, multi-task and distributed arguments pruned",
+  "weights": null,
+  "weights_backbone": null,
+  "trainable_backbone_layers": null,
+  "trainable_backbone_layers_note": "default None; builder enables all 5 backbone layers trainable from scratch without UserWarning",
+  "backbone_norm_layer": "torch.nn.BatchNorm2d (trainable, builder default for scratch)",
+  "num_classes": 3,
+  "classes": {
+    "0": "Background",
+    "1": "ActiveTuberculosis",
+    "2": "ObsoletePulmonaryTuberculosis"
+  },
+  "input_resolution": {
+    "height": 512,
+    "width": 512,
+    "min_size": 512,
+    "max_size": 512
+  },
+  "normalization": {
+    "image_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "image_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "anchors": {
+    "sizes_per_level": [
+      [
+        32,
+        40,
+        50
+      ],
+      [
+        64,
+        80,
+        101
+      ],
+      [
+        128,
+        161,
+        203
+      ],
+      [
+        256,
+        322,
+        406
+      ],
+      [
+        512,
+        645,
+        812
+      ]
+    ],
+    "aspect_ratios": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "anchors_per_location": 9,
+    "fpn_levels": [
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7"
+    ]
+  },
+  "loss_functions": {
+    "classification": "Sigmoid Focal Loss (alpha=0.25, gamma=2.0, reduction='sum')",
+    "box_regression": "L1 Loss (reduction='sum')",
+    "normalization": "divided by max(1, num_foreground) per image, averaged over batch",
+    "csv_metric_columns": {
+      "total_loss": "sum of component losses from meter 'loss'",
+      "loss_classification": "Focal classification loss from meter 'classification'",
+      "loss_bbox_regression": "L1 box regression loss from meter 'bbox_regression'"
+    }
+  },
+  "matching_and_postprocessing": {
+    "fg_iou_thresh": 0.5,
+    "bg_iou_thresh": 0.4,
+    "score_thresh": 0.05,
+    "nms_thresh": 0.5,
+    "detections_per_img": 300,
+    "topk_candidates": 1000
+  },
+  "optimization": {
+    "optimizer": "SGD",
+    "base_lr": 0.0025,
+    "lr_scaling_rule": "Linear scaling with batch size 4 on 1 GPU: 0.01 * (4 / 16) = 0.0025 (Goyal et al., 2017, Section 2.1, page 2 / torchvision docstring). Official v0.29.1 README RetinaNet command uses --lr 0.01 with --weights-backbone ResNet50_Weights.IMAGENET1K_V1; Run A deliberately omits that flag.",
+    "momentum": 0.9,
+    "weight_decay": 0.0001,
+    "norm_weight_decay": null,
+    "lr_scheduler": "MultiStepLR",
+    "lr_milestones": [
+      43,
+      59
+    ],
+    "lr_milestone_scaling": "16 and 22 of 26 official epochs scaled to 70 epochs (16*70/26=43.08, 22*70/26=59.23)",
+    "lr_gamma": 0.1,
+    "warmup": {
+      "epoch": 0,
+      "type": "LinearLR",
+      "start_factor": 0.001,
+      "total_iters": 138,
+      "formula": "min(1000, len(data_loader) - 1); GroupedBatchSampler yields floor(559 / 4) = 139 batches (3 remainder images skipped per epoch) -> min(1000, 139 - 1) = 138 iters"
+    },
+    "gradient_clipping": null,
+    "early_stopping": null,
+    "mixed_precision": "AMP (torch.cuda.amp.GradScaler)",
+    "batch_size": 4,
+    "epochs": 70,
+    "workers": 2,
+    "seed": 42
+  },
+  "dataset_policy": {
+    "source": "TBX11K Canonical 70:15:15 Splits",
+    "train_image_selection": "TB images with >= 1 lesion only (559 images)",
+    "val_test_image_selection": "Full canonical sets matching yolo/test.py (690 val, 690 test; healthy background images included with empty box tensors)",
+    "augmentation": "RandomHorizontalFlip(p=0.5) with box coordinate reflection and ToDtype(float, scale=True)",
+    "aspect_ratio_group_factor": 3
+  },
+  "evaluation_protocol": {
+    "threshold_tuning_split": "Validation split ONLY",
+    "sweep_range": [
+      0.01,
+      0.95
+    ],
+    "sweep_step": 0.01,
+    "matching_iou_threshold": 0.5,
+    "selection_criterion": "Maximum Macro-F1 across ActiveTuberculosis and ObsoletePulmonaryTuberculosis",
+    "test_split_protocol": "Evaluated strictly ONCE using frozen validation-optimal threshold tau*",
+    "coco_evaluator": "Official torchvision CocoEvaluator (pycocotools)"
+  },
+  "library_versions": {
+    "python": "3.11.15",
+    "torch": "2.14.1+cu130",
+    "torchvision": "0.29.1+cu130",
+    "pycocotools": "2.0.11"
+  },
+  "canonical_data_counts": {
+    "train": {
+      "images": 559,
+      "total_boxes": 837,
+      "active_boxes": 657,
+      "obsolete_boxes": 180
+    },
+    "val": {
+      "images": 690,
+      "tb_images_with_boxes": 120,
+      "healthy_background_images": 570,
+      "total_boxes": 195,
+      "active_boxes": 172,
+      "obsolete_boxes": 23
+    },
+    "test": {
+      "images": 690,
+      "tb_images_with_boxes": 120,
+      "healthy_background_images": 570,
+      "total_boxes": 179,
+      "active_boxes": 143,
+      "obsolete_boxes": 36
+    },
+    "total_boxes": 1211,
+    "all_images_512x512": true
+  }
+}

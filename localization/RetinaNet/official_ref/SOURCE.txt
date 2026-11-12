@@ -1,0 +1,26 @@
+Official torchvision Detection Reference Scripts
+================================================
+Repository: https://github.com/pytorch/vision
+Subdirectory: references/detection/
+Git Tag: v0.29.1
+Matching Installed torchvision Version: 0.29.1+cu130
+Date Retrieved: 2026-11-10
+
+Original Files in Reference:
+- train.py
+- engine.py
+- utils.py
+- coco_utils.py
+- coco_eval.py
+- transforms.py
+- presets.py
+- group_by_aspect_ratio.py
+
+Imported Unmodified Copies in this directory:
+- engine.py
+- utils.py
+- coco_utils.py
+- coco_eval.py
+- transforms.py
+- presets.py
+- group_by_aspect_ratio.py
