@@ -1,0 +1,2 @@
+subset_exact_match_acc,hamming_accuracy,hamming_loss,category_accuracy,category_macro_f1,category_weighted_f1,any_tb_precision,any_tb_recall,any_tb_specificity,any_tb_f1
+0.9174,0.9464,0.0536,0.9174,0.4249,0.9133,0.9813,0.875,0.9965,0.9251

@@ -1,7 +1,7 @@
 {
   "model_name": "retinanet_resnet50_fpn",
   "architecture_variant": "v1 (ResNet-50 + FPN, LastLevelP6P7)",
-  "training_regime": "Run A: Strict From-Scratch (no ImageNet pretrained weights)",
+  "training_regime": "Run B: Full-Train-Split From-Scratch (559 TB + 2660 healthy images; empty targets for healthy images)",
   "script_provenance": "train.py is adapted from the official script, multi-task and distributed arguments pruned",
   "weights": null,
   "weights_backbone": null,
@@ -110,8 +110,8 @@
       "epoch": 0,
       "type": "LinearLR",
       "start_factor": 0.001,
-      "total_iters": 138,
-      "formula": "min(1000, len(data_loader) - 1); GroupedBatchSampler yields floor(559 / 4) = 139 batches (3 remainder images skipped per epoch) -> min(1000, 139 - 1) = 138 iters"
+      "total_iters": 803,
+      "formula": "min(1000, len(data_loader) - 1); GroupedBatchSampler yields floor(3219 / 4) = 804 batches (3 remainder images skipped per epoch) -> min(1000, 804 - 1) = 803 iters"
     },
     "gradient_clipping": null,
     "early_stopping": null,
@@ -123,7 +123,7 @@
   },
   "dataset_policy": {
     "source": "TBX11K Canonical 70:15:15 Splits",
-    "train_image_selection": "TB images with >= 1 lesion only (559 images)",
+    "train_image_selection": "Full canonical train split (3219 images: 559 TB + 2660 healthy images; healthy images have empty box tensors)",
     "val_test_image_selection": "Full canonical sets matching yolo/test.py (690 val, 690 test; healthy background images included with empty box tensors)",
     "augmentation": "RandomHorizontalFlip(p=0.5) with box coordinate reflection and ToDtype(float, scale=True)",
     "aspect_ratio_group_factor": 3
@@ -148,7 +148,9 @@
   },
   "canonical_data_counts": {
     "train": {
-      "images": 559,
+      "images": 3219,
+      "tb_images_with_boxes": 559,
+      "healthy_background_images": 2660,
       "total_boxes": 837,
       "active_boxes": 657,
       "obsolete_boxes": 180

@@ -11,7 +11,7 @@ Classes:
   2: ObsoletePulmonaryTuberculosis
 
 Canonical Splits:
-  - train: 559 TB images with >= 1 box (837 boxes: 657 Active, 180 Obsolete)
+  - train: 3219 images (559 TB images with >= 1 box + 2660 healthy images, 837 boxes: 657 Active, 180 Obsolete)
   - val:   690 images (120 TB with boxes + 570 healthy background, 195 boxes: 172 Active, 23 Obsolete)
   - test:  690 images (120 TB with boxes + 570 healthy background, 179 boxes: 143 Active, 36 Obsolete)
 """
@@ -30,7 +30,9 @@ from PIL import Image
 # Canonical Audit Reference Counts (from Phase 1 Data Audit)
 CANONICAL_AUDIT_COUNTS = {
     "train": {
-        "images": 559,
+        "images": 3219,
+        "images_with_boxes": 559,
+        "empty_images": 2660,
         "boxes": 837,
         "active_boxes": 657,
         "obsolete_boxes": 180,
@@ -103,6 +105,9 @@ class TBX11KDetectionDataset(Dataset):
         with open(json_path, "r", encoding="utf-8") as f:
             coco_data = json.load(f)
 
+        # Build image_id -> file_name dictionary lookup
+        id_to_file = {img["id"]: img["file_name"] for img in coco_data["images"]}
+
         # Index annotations by image basename
         base_to_annos: Dict[str, List[Dict[str, Any]]] = {}
         for img_info in coco_data["images"]:
@@ -111,7 +116,7 @@ class TBX11KDetectionDataset(Dataset):
 
         for ann in coco_data["annotations"]:
             img_id = ann["image_id"]
-            img_file = coco_data["images"][img_id - 1]["file_name"]
+            img_file = id_to_file[img_id]
             base_name = Path(img_file).name
             base_to_annos.setdefault(base_name, []).append(ann)
 
@@ -136,10 +141,6 @@ class TBX11KDetectionDataset(Dataset):
                 boxes.append([x1, y1, x2, y2])
                 labels.append(int(cid))
                 areas.append(float(w * h))
-
-            # Train split rule: keep only images with at least one box
-            if self.is_train and len(boxes) == 0:
-                continue
 
             self.samples.append({
                 "image_id": idx,

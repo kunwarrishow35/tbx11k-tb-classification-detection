@@ -1,0 +1,38 @@
+{
+  "hardware_environment": {
+    "device": "cuda",
+    "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "cuda_available": true,
+    "torch_version": "2.14.1+cu130",
+    "precision_mode": "FP16 Autocast"
+  },
+  "single_image_benchmark": {
+    "batch_size": 1,
+    "input_resolution": "512x512x3",
+    "mean_latency_ms": 20.41,
+    "median_latency_ms": 20.34,
+    "std_latency_ms": 0.89,
+    "min_latency_ms": 19.09,
+    "max_latency_ms": 23.38,
+    "throughput_fps": 48.99,
+    "timed_iterations": 100,
+    "warmup_iterations": 20,
+    "pipeline_stage": "Forward-only (Backbone + Head; matches YOLO py_model benchmark)"
+  },
+  "batched_benchmark": {
+    "batch_size": 4,
+    "input_resolution": "4x512x512x3",
+    "mean_batch_latency_ms": 39.84,
+    "throughput_images_per_sec": 100.41,
+    "timed_iterations": 50,
+    "warmup_iterations": 10,
+    "pipeline_stage": "Forward-only Batched"
+  },
+  "end_to_end_benchmark": {
+    "batch_size": 1,
+    "input_resolution": "512x512x3",
+    "mean_latency_ms": 24.55,
+    "throughput_fps": 40.74,
+    "pipeline_stage": "Full End-to-End Pipeline (Transform + Backbone + FPN + Box Decode + NMS)"
+  }
+}

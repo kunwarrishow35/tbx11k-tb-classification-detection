@@ -1,6 +1,6 @@
-# TBX11K RetinaNet (ResNet-50 + FPN) From-Scratch Localization Pipeline
+# TBX11K RetinaNet (ResNet-50 + FPN) Full-Train-Split Localization Pipeline
 
-This directory contains the from-scratch (Run A) lesion localization implementation for the TBX11K dataset, following torchvision's official `references/detection` recipe (`v0.29.1`).
+This directory contains the from-scratch (Run B) lesion localization implementation for the TBX11K dataset, following torchvision's official `references/detection` recipe (`v0.29.1`) adapted to the full canonical train split (3,219 images) to ensure direct comparability with YOLOv8s and CNN baselines.
 
 ---
 
@@ -19,18 +19,27 @@ localization/RetinaNet/
 │   ├── group_by_aspect_ratio.py
 │   ├── SHA256SUMS.txt
 │   └── SOURCE.txt
-├── dataset.py                             # TBX11K detection dataset + self-check
-├── train.py                               # Training pipeline adapted from the official script, multi-task and distributed arguments pruned
+├── dataset.py                             # TBX11K detection dataset + self-check (3,219 train, 690 val, 690 test)
+├── train.py                               # Training pipeline adapted from official script (70 epochs, milestones 43/59)
 ├── train_vs_official.diff                 # Unified diff of train.py against official
-├── test.py                                # Evaluation pipeline mirroring yolo/test.py
+├── test.py                                # Comprehensive evaluation pipeline mirroring yolo/test.py
 ├── config.json                            # Hyperparameters, versions & computed data counts
 ├── README.md                              # This documentation
 └── outputs/
-    └── run_A_scratch/                     # Checkpoints (best.pth, last.pth, checkpoint.pth)
-        ├── metrics.csv                    # Per-epoch training losses (loss_classification, loss_bbox_regression) and COCO AP metrics
-        ├── val_results.json               # Validation threshold sweep and metrics
-        ├── test_results.json              # Final frozen test-set evaluation
-        └── results.txt                    # Formatted evaluation report
+    ├── archive_runA_559imgs/              # Archived Run A logs (metrics.csv, training.log)
+    └── run_B_fulldata/                    # Output directory for Run B (checkpoints and evaluation)
+        ├── checkpoint.pth                 # Periodic resume state
+        ├── best.pth                       # Best validation checkpoint
+        └── evaluation/                    # Mirrored YOLO evaluation outputs
+            ├── evaluation_report.txt      # Formatted evaluation report
+            ├── evaluation_summary.json    # Complete JSON summary
+            ├── model_complexity.json      # Parameters, checkpoint size, thop GFLOPs
+            ├── inference_benchmark.json   # Forward-only and end-to-end FPS / latency
+            ├── per_image_predictions.csv  # Per-image predictions, max conf, 4-class labels
+            ├── per_class_metrics.csv      # Discrete detection metrics per disease class
+            ├── image_level_metrics.csv    # Derived image-level and screening metrics
+            ├── threshold_analysis.csv     # Full validation threshold sweep table
+            └── *.png                      # Confusion matrices, F1 curve, PR and ROC curves
 ```
 
 ---
@@ -43,23 +52,22 @@ Execute within the project virtual environment:
 .\.venv\Scripts\Activate.ps1
 ```
 
-### Full 70-Epoch Training (Run A: From Scratch)
+### Full 70-Epoch Training (Run B: Full Train Split)
 ```powershell
-python localization/RetinaNet/train.py --output-dir localization/RetinaNet/outputs/run_A_scratch
+python localization/RetinaNet/train.py --output-dir localization/RetinaNet/outputs/run_B_fulldata
 ```
-* Training runs for 70 epochs with batch size 4, base learning rate 0.0025, AMP enabled.
+* Training runs for 70 epochs with batch size 4 on all 3,219 images (559 TB + 2,660 healthy images), base learning rate 0.0025, AMP enabled.
 * Every epoch saves `checkpoint.pth` (resume state) and checks validation COCO mAP50-95.
 * The model achieving the highest validation mAP50-95 is automatically saved to `best.pth`.
-* Training conclues with `last.pth` saved at epoch 70.
 
 ### Resuming Training
 ```powershell
-python localization/RetinaNet/train.py --output-dir localization/RetinaNet/outputs/run_A_scratch --resume localization/RetinaNet/outputs/run_A_scratch/checkpoint.pth
+python localization/RetinaNet/train.py --output-dir localization/RetinaNet/outputs/run_B_fulldata --resume localization/RetinaNet/outputs/run_B_fulldata/checkpoint.pth
 ```
 
 ### Evaluation
 ```powershell
-python localization/RetinaNet/test.py --weights localization/RetinaNet/outputs/run_A_scratch/best.pth --output-dir localization/RetinaNet/outputs/run_A_scratch
+python localization/RetinaNet/test.py --weights localization/RetinaNet/outputs/run_B_fulldata/best.pth --output-dir localization/RetinaNet/outputs/run_B_fulldata/evaluation
 ```
 * Performs official COCO evaluation on validation and test splits.
 * Optimizes the confidence threshold on the validation split over $\tau \in [0.01, 0.95]$ in 0.01 steps at IoU 0.50 (maximizing Macro-F1).
@@ -81,7 +89,7 @@ Every deviation from the official torchvision detection recipe (`pytorch/vision/
 | :--- | :--- | :--- | :---: | :--- |
 | **Model** | `retinanet_resnet50_fpn` | `retinanet_resnet50_fpn` | **IDENTICAL** | Architecture preserved unchanged. |
 | **Dataset** | COCO (91 classes) | TBX11K (`num_classes=3`: 0=Background, 1=Active TB, 2=Obsolete TB) | **DATASET** | Domain-specific classes. |
-| **Training Images** | Images without annotations removed | TB images with $\ge 1$ lesion only (559 images) | **DATASET** | Preserves standard detection training policy. |
+| **Training Images** | Images without annotations removed | Full canonical train split (3,219 images: 559 TB + 2,660 healthy images; healthy images have empty targets) | **DATASET** | Full-split comparability with YOLO and CNNs. |
 | **Validation / Test Images** | Full validation set | Full canonical sets (690 val, 690 test; healthy background included) | **DATASET** | Replicates `yolo/test.py` evaluation protocol. |
 | **Weights** | ImageNet pretrained ResNet-50 (`--weights-backbone ResNet50_Weights.IMAGENET1K_V1`) | Random initialization (`weights=None, weights_backbone=None`) | **PROJECT** | The v0.29.1 README RetinaNet command passes `--weights-backbone ResNet50_Weights.IMAGENET1K_V1`; Run A deliberately omits that flag to train strictly from scratch. |
 | **Trainable Layers** | 3 layers (stem & layer 1 frozen) | All 5 backbone layers trainable (`trainable_backbone_layers=None` default) | **PROJECT** | Builder default for from-scratch training enables all 5 stages without `UserWarning`. |
@@ -95,7 +103,7 @@ Every deviation from the official torchvision detection recipe (`pytorch/vision/
 | **Optimizer** | SGD (`momentum=0.9, weight_decay=1e-4`) | SGD (`momentum=0.9, weight_decay=1e-4`) | **IDENTICAL** | Official optimizer settings. |
 | **Learning Rate** | 0.01 on 8 GPUs $\times$ 2 images (batch 16) | **0.0025** on 1 GPU $\times$ 4 images (batch 4) | **SYSTEM** | The v0.29.1 README command specifies `--lr 0.01`; scaled linearly for single GPU batch 4 via $0.01 \times (4 / 16) = 0.0025$ (Goyal et al., 2017). |
 | **LR Scheduler** | `MultiStepLR` [16, 22], $\gamma=0.1$ (26 epochs) | `MultiStepLR` **[43, 59]**, $\gamma=0.1$ (70 epochs) | **PROJECT** | Milestones scaled linearly: $16, 22 \times 70/26$. |
-| **Warmup** | Epoch 0 only, `LinearLR` (factor 1/1000) | Epoch 0 only, `LinearLR` (factor 1/1000, 138 iters) | **IDENTICAL** | Official warmup logic: $\min(1000, \text{len} - 1) = \min(1000, 139 - 1) = 138$ iters. GroupedBatchSampler yields $\lfloor 559 / 4 \rfloor = 139$ batches (3 images skipped per epoch). |
+| **Warmup** | Epoch 0 only, `LinearLR` (factor 1/1000) | Epoch 0 only, `LinearLR` (factor 1/1000, 803 iters) | **IDENTICAL** | Official warmup logic: $\min(1000, \text{len} - 1) = \min(1000, 804 - 1) = 803$ iters. GroupedBatchSampler yields $\lfloor 3219 / 4 \rfloor = 804$ batches (3 images skipped per epoch). |
 | **Epochs** | 26 | **70 epochs** | **PROJECT** | Project-wide standard training duration. |
 | **Batch Size** | 16 (8 GPUs $\times$ 2 images) | **4** (1 GPU $\times$ 4 images) | **SYSTEM** | Workstation VRAM constraint (RTX 4050 6GB). |
 | **Gradient Clipping** | None | None | **IDENTICAL** | Unchanged from official `engine.py`. |
@@ -103,7 +111,7 @@ Every deviation from the official torchvision detection recipe (`pytorch/vision/
 | **Workers** | 4 | **2** | **SYSTEM** | CPU core allocation for workstation stability. |
 | **Augmentation** | Random horizontal flip ($p=0.5$), boxes flipped | Random horizontal flip ($p=0.5$), boxes flipped | **IDENTICAL** | Official detection transforms. |
 | **Distributed Training**| `DistributedDataParallel` (8 GPUs) | Single GPU | **SYSTEM** | Single-GPU execution environment. |
-| **Random Seed** | None | **Seed 42** | **SYSTEM** | Seeds python, numpy and torch (seed 42). |
+| **Random Seed** | None | **Seed 42** | **ADDITION** | Seeds python, numpy and torch (seed 42). |
 | **Early Stopping** | None | None | **IDENTICAL** | Trains full 70 epochs. |
 | **Checkpointing** | Saves `model_{epoch}.pth` every epoch | Saves `checkpoint.pth` (resume), `last.pth`, and `best.pth` | **ADDITION** | Prevents disk overflow; tracks validation best. |
 | **Metrics Logging** | Console logging | Console logging + `metrics.csv` (`total_loss`, `loss_classification`, `loss_bbox_regression`, COCO APs) | **ADDITION** | Machine-readable per-epoch tracking; fail-fast if meters are missing; appends cleanly on resume. |

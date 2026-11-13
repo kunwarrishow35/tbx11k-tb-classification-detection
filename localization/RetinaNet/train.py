@@ -18,8 +18,8 @@ Official Reference Recipe:
     On our single-GPU setup with batch size 4, the learning rate is scaled linearly according to
     Goyal et al. (2017, Section 2.1, page 2) and official docstring guidance:
         lr = 0.01 * (batch_size 4 / 16) = 0.0025.
-    Warmup is 138 iterations: min(1000, len(data_loader) - 1). GroupedBatchSampler yields
-    floor(559 / 4) = 139 batches, so 3 images are skipped each epoch.
+    Warmup is 803 iterations: min(1000, len(data_loader) - 1). GroupedBatchSampler yields
+    floor(3219 / 4) = 804 batches, so 3 images are skipped each epoch.
 """
 
 import argparse
@@ -194,7 +194,7 @@ def get_args_parser(add_help=True):
         "--lr-gamma", default=0.1, type=float, help="decrease lr by a factor of lr-gamma (default: 0.1)"
     )
     parser.add_argument("--print-freq", default=20, type=int, help="print frequency")
-    parser.add_argument("--output-dir", default="outputs/run_A_scratch", type=str, help="path to save outputs")
+    parser.add_argument("--output-dir", default="outputs/run_B_fulldata", type=str, help="path to save outputs")
     parser.add_argument("--resume", default="", type=str, help="path of checkpoint")
     parser.add_argument("--start_epoch", default=0, type=int, help="start epoch")
     parser.add_argument("--aspect-ratio-group-factor", default=3, type=int, help="aspect ratio group factor (default: 3)")
@@ -241,7 +241,7 @@ def main(args):
     dataset, num_classes = get_dataset(is_train=True, args=args)
     dataset_test, _ = get_dataset(is_train=False, args=args)
 
-    print(f"Training set: {len(dataset)} TB images (images without lesions removed)")
+    print(f"Training set: {len(dataset)} images (full canonical split: 559 TB + 2660 healthy)")
     print(f"Validation set: {len(dataset_test)} images (full canonical split matching yolo/test.py)")
 
     print("Creating data loaders")

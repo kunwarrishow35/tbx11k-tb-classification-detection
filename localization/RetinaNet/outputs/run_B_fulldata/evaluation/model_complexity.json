@@ -1,0 +1,16 @@
+{
+  "architecture": "RetinaNet (ResNet-50 + FPN)",
+  "input_resolution": "512x512x3",
+  "checkpoint_path": "C:\\Users\\kunwa\\Desktop\\IEEE RESEARCH\\localization\\RetinaNet\\outputs\\run_B_fulldata\\best.pth",
+  "checkpoint_file_size_mb": 246.34,
+  "total_parameters": 32242559,
+  "trainable_parameters": 32242559,
+  "thop_profiling": {
+    "tool": "thop",
+    "macs": 52279652352.0,
+    "flops": 104559304704.0,
+    "convention": "1 MAC = 2 floating point operations",
+    "gflops": 104.56
+  },
+  "hardware_device": "cuda"
+}
