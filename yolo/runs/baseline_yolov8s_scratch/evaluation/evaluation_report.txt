@@ -123,3 +123,17 @@
   - Max-pooling derivation of image presence preserves end-to-end multi-task consistency.
   - Latency timing employs CUDA hardware synchronization to eliminate GPU queue latency distortion.
 ==============================================================================
+
+
+Annotation coordinate convention (YOLO labels). The YOLO labels were generated from the original Pascal 
+VOC XML annotations, whose pixel coordinates are 1-based. The TBX11K COCO JSON uses 0-based 
+coordinates (xmin - 1, ymin - 1). The YOLO labels therefore differ from the COCO JSON boxes 
+by a constant offset of exactly 1.0 px in x and y (box widths and heights are identical, 
+verified on all 1,211 boxes across train/val/test, with zero per-image count mismatches). 
+The offset is the same in training, validation and test labels, so the YOLO model was 
+trained and evaluated against internally consistent ground truth. For a 50 x 50 px box 
+a (1, 1) px shift corresponds to an IoU of about 0.92, well above the 0.5 threshold used 
+for AP50 and the threshold-based precision/recall; the effect is expected to be small, and 
+larger only at stricter IoU thresholds. The RetinaNet run uses the COCO JSON boxes directly.
+ The YOLO results were not re-scored or retrained, and the effect was not measured.
+
